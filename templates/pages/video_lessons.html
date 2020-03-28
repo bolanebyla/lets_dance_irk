@@ -1,0 +1,26 @@
+{% extends "pages/base.html" %}
+<title>{% block title %}{{ lesson_name }}{% endblock title %}</title>
+{% block page-title %} {{ lesson_name }} {% endblock page-title %}
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+
+            {% for video in videos %}
+
+                <div class="card col-md-3 video" style="width: 18rem;">
+                    <iframe class="card-img-top" width="560" height="315"src=https://www.youtube.com/embed/{{ video.url }}
+                            frameborder="0" allowfullscreen></iframe>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ video.name }}</h5>
+                        <p class="card-text">{{ video.description }}</p>
+                        {#                        <a href="#" class="btn btn-primary">Перейти к уроку</a>#}
+                    </div>
+                </div>
+
+            {% endfor %}
+        </div>
+    </div>
+
+
+{% endblock content %}
