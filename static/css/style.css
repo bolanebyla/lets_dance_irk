@@ -1,31 +1,21 @@
 body {
+    padding-top: 80px;
+    background-color: #0077e2;
 
 }
 
 
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
+.content {
+    min-height: 100vh;
+
 }
 
+/*img {*/
+/*    max-width: 100%;*/
+/*    height: auto;*/
+/*    display: block;*/
+/*}*/
 
-.page-title {
-    padding-top: 30px;
-}
-
-/*header*/
-.header {
-    background-color: #6c757d;
-    position: fixed;
-    z-index: 1000;
-    width: 100%;
-}
-
-.header-container {
-    display: flex;
-    justify-content: space-between;
-}
 
 /*index*/
 .title-main-page {
@@ -37,16 +27,13 @@ img {
     background-size: cover;
 }
 
-.title-main-page-space {
-    padding-bottom: 20px;
-}
 
 .title-main-page h1 {
     text-align: center;
     background: blueviolet;
     color: white;
-
 }
+
 
 /*about-us*/
 
@@ -97,9 +84,14 @@ img {
 }
 
 .first-lesson {
-    padding-top: 100px;
+    padding-top: 20px;
     display: flex;
     justify-content: center;
+}
+
+/*about-teacher*/
+.about-teacher {
+
 }
 
 
@@ -108,6 +100,7 @@ img {
     background-color: #3c3d41;
     color: white;
     padding-top: 30px;
+    margin-top: 20px;
 }
 
 #myFooter .footer-copyright {
@@ -213,7 +206,13 @@ img {
     -webkit-flex: 0 0 auto;
 }
 
-/*video*/
-.video {
-    margin:10px;
+
+.card {
+    margin: 10px;
+}
+
+.card .btn {
+    width: 150px;
+    margin-left: 20px;
+    margin-bottom: 10px;
 }

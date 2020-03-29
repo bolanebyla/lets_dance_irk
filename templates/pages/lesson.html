@@ -1,0 +1,44 @@
+{% extends "pages/base.html" %}
+<title>{% block title %}{{ name }}{% endblock title %}</title>
+{% block content %}
+
+
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-8">
+                <h1>{{ name }}</h1>
+                <br>
+                {{ text|safe }}
+            </div>
+
+
+            <div class="col-md-4">
+                <a class="list-group-item list-group-item-action" href="../{{ link }}">
+                    <h4>{{ direction_name }}</h4>
+                </a>
+                <div class="list-group ">
+                    {% for lesson in lessons %}
+                        {% if name == lesson.name %}
+                            <a href="/lessons/{{ direction }}?name={{ lesson.name }}"
+                               class="list-group-item list-group-item-action active">
+                                {{ lesson.name }}
+                            </a>
+                        {% else %}
+                            <a href="/lessons/{{ direction }}?name={{ lesson.name }}"
+                               class="list-group-item list-group-item-action">
+                                {{ lesson.name }}
+                            </a>
+                        {% endif %}
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+{% endblock content %}

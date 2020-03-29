@@ -1,0 +1,30 @@
+{% extends "pages/base.html" %}
+<title>{% block title %}{{ page_name }}{% endblock title %}</title>
+{% block page-title %} {{ page_name }} {% endblock page-title %}
+{% block content %}
+
+
+
+
+    <div class="container">
+        <div class="row">
+            {% for lesson in lessons %}
+
+                <div class="card col-md-3 col-sm-6" style="width: 18rem;">
+                    <div class="card-body">
+
+                        <h5 class="card-title">{{ lesson.name }}</h5>
+                        <p class="card-text">{{ lesson.description }}</p>
+                    </div>
+                    <a href="/lessons/{{ name }}?name={{ lesson.name }}" class="btn btn-primary ">Перейти к
+                        уроку</a>
+                </div>
+
+            {% endfor %}
+
+        </div>
+    </div>
+
+
+{% endblock content %}
+
