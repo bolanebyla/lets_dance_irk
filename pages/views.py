@@ -15,7 +15,7 @@ def allDirectionLessons(request, direction):
               'Школьники': LessonsSchoolStudents}
     try:
         table = tables[direction]
-    except:
+    except KeyError:
         return HttpResponseNotFound()
 
     lessons = table.objects.all()
@@ -41,7 +41,7 @@ def oneLesson(request, direction, lesson_name):
               'Школьники': LessonsSchoolStudents}
     try:
         table = tables[direction]
-    except:
+    except KeyError:
         return HttpResponseNotFound()
 
     lessons = table.objects.all()
