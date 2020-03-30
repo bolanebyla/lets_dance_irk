@@ -15,18 +15,18 @@
 
 
             <div class="col-md-4">
-                <a class="list-group-item list-group-item-action" href="../{{ link }}">
-                    <h4>{{ direction_name }}</h4>
+                <a class="list-group-item list-group-item-action" href="../{{ direction }}">
+                    <h4>{{ direction }}</h4>
                 </a>
                 <div class="list-group ">
                     {% for lesson in lessons %}
                         {% if name == lesson.name %}
-                            <a href="/lessons/{{ direction }}?name={{ lesson.name }}"
+                            <a href="/lessons/{{ direction }}/{{ lesson.name }}"
                                class="list-group-item list-group-item-action active">
                                 {{ lesson.name }}
                             </a>
                         {% else %}
-                            <a href="/lessons/{{ direction }}?name={{ lesson.name }}"
+                            <a href="/lessons/{{ direction }}/{{ lesson.name }}"
                                class="list-group-item list-group-item-action">
                                 {{ lesson.name }}
                             </a>

@@ -10,7 +10,7 @@ body {
 
 }
 
-iframe{
+iframe {
     max-width: 100%;
 }
 
@@ -36,6 +36,7 @@ iframe{
     text-align: center;
     background: blueviolet;
     color: white;
+    max-height: 100%;
 }
 
 

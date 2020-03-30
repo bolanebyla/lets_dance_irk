@@ -1,4 +1,5 @@
 from django.shortcuts import render, HttpResponse
+from django.http import HttpResponseNotFound
 from .models import LessonsSchoolStudents, LessonsPreschoolers, LessonsBallroomDancing
 
 
@@ -8,28 +9,42 @@ def index(request):
 
 # =======================================================================#
 
+# Список всех уроков направления
+def allDirectionLessons(request, direction):
+    tables = {'Бальные танцы': LessonsBallroomDancing, 'Дошкольники': LessonsPreschoolers,
+              'Школьники': LessonsSchoolStudents}
+    try:
+        table = tables[direction]
+    except:
+        return HttpResponseNotFound()
 
-# Бальные танцы
-def LessonsBallroomDancing_list(request):
-    lessons = LessonsBallroomDancing.objects.all()
-
-    data = []
+    lessons = table.objects.all()
+    lessons_data = []
     for lesson in lessons:
-        data.append(
+        lessons_data.append(
             {
                 'name': lesson.name,
                 'description': lesson.description,
             }
         )
-    page_name = 'Бальные танцы'
-    name = 'BallroomDancing'
+    data = {
+        'lessons': lessons_data,
+        'lessons_active': 'active',
+        'direction': direction
+    }
+    return render(request, 'pages/lessons_list.html', data)
 
-    return render(request, 'pages/lessons_list.html',
-                  {'lessons_active': 'active', 'name': name, 'page_name': page_name, 'lessons': data})
 
+# Один урок направления
+def oneLesson(request, direction, lesson_name):
+    tables = {'Бальные танцы': LessonsBallroomDancing, 'Дошкольники': LessonsPreschoolers,
+              'Школьники': LessonsSchoolStudents}
+    try:
+        table = tables[direction]
+    except:
+        return HttpResponseNotFound()
 
-def lessonBallroomDancing(request):
-    lessons = LessonsBallroomDancing.objects.all()
+    lessons = table.objects.all()
     all_lessons = []
     for lesson in lessons:
         all_lessons.append(
@@ -39,113 +54,19 @@ def lessonBallroomDancing(request):
             }
         )
 
-    name = request.GET.get("name", 0)
-    lesson = LessonsBallroomDancing.objects.get(name=name)
+    try:
+        lesson = table.objects.get(name=lesson_name)
+    except:
+        return HttpResponseNotFound()
+
     data = {
-        'direction': 'BallroomDancing',
-        'direction_name': 'Бальные танцы',
+        'direction': direction,
         'name': lesson.name,
         'text': lesson.text,
         'lessons': all_lessons,
-        'link': 'LessonsBallroomDancing',
         'lessons_active': 'active',
 
     }
+
     return render(request, 'pages/lesson.html', data)
 
-
-# =======================================================================#
-
-
-# Для дошкольников
-
-def LessonsPreschoolers_list(request):
-    lessons = LessonsPreschoolers.objects.all()
-
-    data = []
-    for lesson in lessons:
-        data.append(
-            {
-                'name': lesson.name,
-                'description': lesson.description,
-            }
-        )
-    page_name = 'Дошкольники'
-    name = 'Preschoolers'
-
-    return render(request, 'pages/lessons_list.html',
-                  {'lessons_active': 'active', 'name': name, 'page_name': page_name, 'lessons': data})
-
-
-def lessonPreschoolers(request):
-    lessons = LessonsPreschoolers.objects.all()
-    all_lessons = []
-    for lesson in lessons:
-        all_lessons.append(
-            {
-                'name': lesson.name,
-                'lessons_active': 'active',
-            }
-        )
-
-    name = request.GET.get("name", 0)
-    lesson = LessonsPreschoolers.objects.get(name=name)
-    data = {
-        'direction': 'Preschoolers',
-        'direction_name': 'Дошкольники',
-        'name': lesson.name,
-        'text': lesson.text,
-        'lessons': all_lessons,
-        'link': 'LessonsPreschoolers',
-        'lessons_active': 'active',
-
-    }
-    return render(request, 'pages/lesson.html', data)
-
-
-# =======================================================================#
-
-
-# Для школьников
-
-def LessonsSchoolStudents_list(request):
-    lessons = LessonsSchoolStudents.objects.all()
-
-    data = []
-    for lesson in lessons:
-        data.append(
-            {
-                'name': lesson.name,
-                'description': lesson.description,
-            }
-        )
-    page_name = 'Школьники'
-    name = 'SchoolStudents'
-
-    return render(request, 'pages/lessons_list.html',
-                  {'lessons_active': 'active', 'name': name, 'page_name': page_name, 'lessons': data})
-
-
-def lessonSchoolStudents(request):
-    lessons = LessonsSchoolStudents.objects.all()
-    all_lessons = []
-    for lesson in lessons:
-        all_lessons.append(
-            {
-                'name': lesson.name,
-                'lessons_active': 'active',
-            }
-        )
-
-    name = request.GET.get("name", 0)
-    lesson = LessonsSchoolStudents.objects.get(name=name)
-    data = {
-        'direction': 'Preschoolers',
-        'direction_name': 'Школьники',
-        'name': lesson.name,
-        'text': lesson.text,
-        'lessons': all_lessons,
-        'link': 'LessonsSchoolStudents'
-
-    }
-    return render(request, 'pages/lesson.html', data)
