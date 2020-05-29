@@ -4,3 +4,7 @@ db.sqlite3
 __pycache__
 venv
 .DS_Store
+Макет
+static/css(old)
+static/img(old)
+templates(old)

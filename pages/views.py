@@ -70,3 +70,8 @@ def oneLesson(request, direction, lesson_name):
 
     return render(request, 'pages/lesson.html', data)
 
+
+def news(request):
+    data = {}
+    return render(request, 'pages/news.html', data)
+

@@ -1,0 +1,321 @@
+/*-----------------------------------------------------------------------------------
+  
+    CSS INDEX
+    ===================
+    1. О нас
+    2. Направления подготовки
+    3. Расписание
+    4. Руководитель
+    5. Новости
+    6. Наши выступления
+    
+#5FC7AE
+-----------------------------------------------------------------------------------*/
+
+.slide-logo{
+background-image: url("img/slider/slider1.jpg")
+}
+
+/*----------------------------------------*/
+/*  1. О нас
+/*----------------------------------------*/
+/*.game-bg{position: relative; background: #fff; box-shadow: 0 0 4px 4px #ECECEC; height: 345px}*/
+.about-video {
+  position: relative;
+  text-align: center;
+  display: inline-block;
+  box-shadow: 0 0 4px 4px #ececec;
+}
+.game:after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  content: "";
+}
+.game {
+  position: relative;
+  z-index: 2;
+  margin: 10px;
+}
+.about-content > h2 {
+  margin-top: 28px;
+  margin-bottom: 13px;
+}
+.about-content > h2,
+.section-title h2 {
+  color: #676767;
+  font-size: 36px;
+  text-transform: capitalize;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+}
+.section-title h2 {
+  margin-bottom: 40px;
+}
+
+.about-content p {
+  margin-bottom: 35px;
+}
+.about-content p.m-0 {
+  margin-bottom: 0px;
+}
+.video-icon a {
+  left: 0;
+  margin-top: -30px;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 50%;
+  z-index: 9;
+}
+.video-icon a i {
+  color: #fff;
+  font-size: 60px;
+}
+/*----------------------------------------*/
+/*  2. Направления подготовки
+/*----------------------------------------*/
+.single-img,
+.portfolio-img {
+  position: relative;
+  display: inline-table;
+  height: 100%;
+}
+.single-img:after,
+.portfolio-img:after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  opacity: 0;
+  transform: scaleY(0);
+  background: rgba(165, 68, 173,0.7);
+  -webkit-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+.single-class:hover .single-img:after,
+.single-class:hover .gallery-icon,
+.grid-item:hover .portfolio-img:after,
+.grid-item:hover .gallery-icon,
+.single-blog:hover .gallery-icon {
+  opacity: 1;
+  transform: scaleY(1);
+}
+.gallery-icon {
+  bottom: 0;
+  height: 40px;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  opacity: 0;
+  z-index: 9;
+  transform: scaleY(0);
+  -webkit-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+.single-img i {
+  color: #fff;
+  font-size: 35px;
+  z-index: 99;
+  position: absolute;
+  text-align: center;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: table-cell;
+  vertical-align: middle;
+  background: transparent;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  margin: auto;
+  line-height: 42px;
+  -webkit-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+.single-img i:hover {
+  color: #91c7ae;
+  background: #fff;
+  transform: scale(1);
+}
+.single-content {
+  background: #fff;
+}
+.single-content h3 {
+  font-size: 18px;
+  text-transform: capitalize;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  padding: 20px 40px;
+  border-bottom: 1px solid #f1f1f1;
+}
+.single-content h3 a {
+  color: #757575;
+  -webkit-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+.single-content h3:hover a {
+  color: rgb(165, 68, 173);
+}
+.single-content ul {
+  margin: 0;
+  padding: 20px 0 20px 40px;
+  list-style: none;
+}
+.single-content ul li {
+  color: #7f7f7f;
+  font-size: 16px;
+}
+.single-content ul li:last-child {
+  margin-right: 0px;
+}
+.single-content ul li i {
+  color: rgb(165, 68, 173);
+  font-size: 18px;
+  margin-right: 10px;
+  position: relative;
+  top: 2px;
+}
+/*----------------------------------------*/
+/*  3. Расписание занятий
+/*----------------------------------------*/
+.schedule-time h4 {
+  padding-top: 15px;
+  font-size: 30px;
+}
+/*----------------------------------------*/
+/*  4. Руководитель 
+/*----------------------------------------*/
+.trainer-info ul li {
+  display: inline-block;
+  font-size: 20px;
+  padding-right: 10px;
+}
+.trainer-img img{
+    padding-bottom: 20px;
+}
+/*----------------------------------------*/
+
+
+/*  5. Новости 
+/*----------------------------------------*/
+.blog-pic {
+  width: 30%;
+  display: inline-block;
+  float: left;
+}
+.single-blog {
+  display: inline-block;
+}
+.blog-content {
+  box-shadow: 0 0 4px 4px #f4f4f4;
+  float: left;
+  padding: 35px 30px;
+  margin-top: 20px;
+  width: 70%;
+}
+.blog-content h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  color: #757575;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+.blog-content h6 {
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  color: #aaaaaa;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+.blog-content p {
+  margin-bottom: 15px;
+}
+.blog-content a {
+  color: #757575;
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  text-transform: capitalize;
+  -webkit-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+.blog-content a:hover {
+  color: rgb(165, 68, 173);
+}
+/*----------------------------------------*/
+/*  6. Наши выступления
+/*----------------------------------------*/
+.portfolio-img {
+    position: relative;
+    -webkit-transition: all 0.5s ease 0s;
+    -o-transition: all 0.5s ease 0s;
+    transition: all 0.5s ease 0s;
+  }
+  .portfolio-img::after {
+    background: rgba(165, 68, 173, 0.7) none repeat scroll 0 0 padding-box
+      content-box;
+    padding: 7px;
+  }
+  .portfolio-img::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    opacity: 0;
+    background: rgba(255, 255, 255, 0.7);
+    -webkit-transition: all 0.5s ease 0s;
+    -o-transition: all 0.5s ease 0s;
+    transition: all 0.5s ease 0s;
+  }
+  .grid-item:hover .portfolio-img::before {
+    opacity: 1;
+  }
+  .grid-item:hover .portfolio-img {
+    box-shadow: 0px 0px 4px 4px #ececec;
+  }
+  .grid .grid-item:first-child,
+  .grid .grid-item:nth-child(2),
+  .grid .grid-item:nth-child(3),
+  .grid .grid-item:nth-child(4),
+  .grid .grid-item:nth-child(5),
+  .grid .grid-item:nth-child(6) {
+    padding-bottom: 30px;
+  }
+  .mfp-wrap.mfp-gallery.mfp-close-btn-in.mfp-auto-cursor.mfp-ready {
+    z-index: 99999;
+  }
+  .load a {
+    background: #008c99;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 5px 25px 4px;
+    font-size: 14px;
+    text-align: center;
+    display: inline-block;
+    margin-top: 50px;
+    -webkit-transition: all 0.5s ease 0s;
+    -o-transition: all 0.5s ease 0s;
+    transition: all 0.5s ease 0s;
+  }
+  .load a:hover {
+    color: #008c99;
+  }
+  /*----------------------------------------*/
+

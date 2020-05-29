@@ -2,85 +2,347 @@
 {% load static %}
 
 {% block content %}
-    <div class="container">
-        <div class="row">
-            <div class="title-main-page col-md-12">
-                <h1 class="rounded">Хореографический коллектив "ТАНЦУЙ"</h1>
+<!-- Background Area Start -->
+
+    <!-- <div class="slider-area">	 -->
+    <!-- <div class="slider-wrapper"> -->
+    <div  class="single-slide slide-logo">
+        <div class="slider-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-md-12">
+                        <div class="text-content-wrapper">
+                            <div class="text-content text-center">
+                                <br>
+                                <br>
+                                <br>
+
+                                <h5>Хореографический коллектив</h5>
+                                <h1><span>ТАНЦУЙ</span></h1>
+
+                                <!-- <a class="banner-btn" href="gallery.html" data-text="read more"><span>read more</span></a> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
+    <!-- </div> -->
+    <!-- </div> -->
 
-
-
-    <div class="about-us" id="about-us">
+    <!-- Background Area End -->
+    <!-- О нас Start -->
+    <section class="about-area pt-95 pb-100">
         <div class="container">
-            <h2>Что мы предлагаем?</h2>
-            <br>
             <div class="row">
-                <div class="col-md-4">
-                    <h4>Различные танцевальные направления</h4>
-                    Классические
-                    <br>
-                    Эстрадные
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <div class="about-content">
+                        <h2>О нашем коллективе</h2>
+                        <p class="m-0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                            Ipsum issss has been the industry's standard dummy text ever since the 1500s, when an
+                            unknown lorem printer took a galley of type and scrambled it to make a type specimen book.
+                            It has survived not only five centuries, lorem ipsum is.</p>
+                        <p>but also the leap into electronic typesetting, remaining essentially unchanged. It was
+                            popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+                            passages, and is more recently with desktop publishing software like Aldus PageMaker
+                            including versions. </p>
+                        <br>
+                        <h4>Занятия проходят совершенно БЕСПЛАТНО на базе МБОУ СОШ №24 по адресу
+                            ул. Лермонтова, 299</h4>
+                        <br>
+                        <a class="banner-btn" href="contact.html"
+                            data-text="Записаться на пробное занятие"><span>Записаться на пробное занятие</span></a>
+                    </div>
                 </div>
-
-
-                <div class="col-md-4">
-                    <h4>Элементы гимнастики и акробатики</h4>
-                </div>
-
-                <div class="col-md-4">
-                    <h4>Развитие чувства ритма</h4>
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <div class="about-video active">
+                        <div class="game">
+                            <a href="#"><img src="{% static "img/about/about.jpg" %}" alt="about"></a>
+                        </div>
+                        <div class="video-icon video-hover">
+                            <a class="video-popup" href="https://www.youtube.com/watch?v=YkJ2NYZD1-s">
+                                <i class="zmdi zmdi-play"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    </div>
-
-
-
-    <div class="prices" id="prices">
+    </section>
+    <!-- О нас End -->
+    <!-- Направления подготовки Start -->
+    <section class="class-area fix bg-gray pb-100 pt-95">
         <div class="container">
-            <h2>Расписаие занятий</h2>
-            <div class="prices-items row">
-                <div class="prices-text col-md-12">
-                    <h3>Занятия проходят в понедельник, среду и пятницу</h3>
-                    <h2>1-2 класс 17:00-17:45</h2>
-                    <h2>3-4 класс 18:00-18:45</h2>
-                    <h2>5-8 класс 19:00-20:00</h2>
-                    <div class="first-lesson col-md-12">
-                        <button type="button" class="btn btn-primary">Записаться на пробное занятие</button>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-xs-12">
+                    <div class="section-title text-center">
+                        <h2>У нас вы научитесь</h2>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum issss
+                            has been the industry's standard dummy text ever since the 1500s, when an unknown lorem </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="single-class">
+                        <img src="{% static "img/class/1.jpg" %}" alt="class">
+
+                        <div class="single-content">
+                            <h3>Различным танцевальным направлениям</h3>
+                            <ul>
+                                <li>- Классические</li>
+                                <li>- Эстрадные</li>
+                                <li>- Бальные</li>
+                                <li>- Хип-Хоп</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="single-class">
+
+                        <img src="{% static "img/class/2.jpg" %}" alt="class">
+
+                        <div class="single-content">
+                            <h3>Элементам гимнастики и акробатики</h3>
+                            <ul>
+                                <li>- Правильная осанка</li>
+                                <li>- Координация</li>
+                                <li>- Сильное подтянутое тело</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 hidden-sm col-xs-12">
+                    <div class="single-class">
+
+                        <img src="{% static "img/class/3.jpg" %}" alt="class">
+
+                        <div class="single-content">
+                            <h3>Развитие чувства ритма</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 text-center">
+                    <a class="banner-btn mt-55" href="contact.html" data-text="Записаться на пробное занятие">
+                        <span>Записаться на пробное занятие</span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Направления подготовки End -->
+    <!-- Расписание занятий Strat -->
+    <section id="schedule" class="schedule-area pt-85 pb-90 text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-xs-12">
+                    <div class="section-title">
+                        <h2>Расписание занятий</h2>
+                    </div>
+
+                    <div class="schedule-time">
+                        <h3>Занятия проходят в понедельник, среду и пятницу </h3>
+                        <h4>1-2 класс 17:00-17:45</h4>
+                        <h4>3-4 класс 18:00-18:45</h4>
+                        <h4>5-8 класс 19:00-20:00</h4>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 text-center">
+                    <a class="banner-btn mt-55" href="contact.html" data-text="Записаться на пробное занятие">
+                        <span>Записаться на пробное занятие</span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Расписание занятий End -->
+    <!-- Руководитель Start -->
+    <div class="trainer-area pt-90 pb-100 bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-xs-12">
+                    <div class="section-title text-center">
+                        <h2>Руководитель студии</h2>
                     </div>
                 </div>
 
-            </div>
+                <div class="row">
+                    <div class="trainer-img">
+                        <div class="col-md-4 col-sm-12 col-xs-12">
+                            <img src="{% static "img/teachers/teacher.jpg" %}" alt="">
+                        </div>
+                    </div>
 
-        </div>
-    </div>
+                    <div class="col-md-8 col-sm-12 col-xs-12">
+                        <div class="trainer-info">
+                            <h3>Парилова Мария Анатольевна</h3>
+                            <br>
+                            <h4>тел. 8 (908) 646-04-55</h4>
+                            <br>
 
-    <div class="about-teacher">
-        <div class="container">
-            <h2>Руководитель кружка</h2>
-            <br>
-            <div class="row">
-                <img class="col-md-4" src="{% static "img/teacher.jpg" %}" alt="">
-                <div class="col-md-8">
-                    <h4 class="teacher-name">Парилова Мария Анатольевна</h4>
-                    <h5>тел. 8 (908) 646-04-55</h5>
-                    <p>Художественный руководитель хореографического коллектива "Танцуй" - Парилова Мария Анатольевна 🌷
-
-                        Квалификация: педагог дополнительного образования в области хореографии.
-                        Стаж работы более 5 лет.
-                        Её воспитанники являются призёрами городских, областных и международных конкурсов ☀
-
-                        Постоянно находится в творческом поиске
-                        Стабильно посещает мастер-классы и курсы повышения квалификации.
-                        Девиз по жизни: Делай то, что любишь. Люби то, что делаешь ❣</p>
+                            <p>Художественный руководитель хореографического коллектива "Танцуй" - Парилова Мария
+                                Анатольевна 🌷 Квалификация: педагог дополнительного образования в области хореографии.
+                                Стаж
+                                работы более 5 лет. Её воспитанники являются призёрами городских, областных и
+                                международных
+                                конкурсов ☀ Постоянно находится в творческом поиске Стабильно посещает мастер-классы и
+                                курсы
+                                повышения квалификации. Девиз по жизни: Делай то, что любишь. Люби то, что делаешь ❣</p>
+                            <ul>
+                                <li><a href="https://www.instagram.com/m_parilova/"><i class="fa fa-instagram"></i></a></li>
+                                <li><a href="https://vk.com/m_parilova"><i class="fa fa-vk"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    <!-- Руководитель End -->
+
+    <!-- Новости Start -->
+    <section class="blog-area pt-95 pb-100 ">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-xs-12">
+                    <div class="section-title text-center">
+                        <h2>Новости</h2>
+                        <p>Жизнь нашего коллектива </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <div class="single-blog">
+                        <div class="blog-pic single-img">
+                            <img src="{% static "img/blog/blog1.jpg" %}" alt="blog">
+                        </div>
+                        <div class="blog-content">
+                            <h3>Название мероприятия</h3>
+                            <h6>29 Мая 2020</h6>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut nisl non justo aliquam
+                                euismod ut ac orci.</p>
+                            <a href="blog.html">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <div class="single-blog">
+                        <div class="blog-pic single-img">
+                            <img src="{% static "img/blog/blog1.jpg" %}" alt="blog">
+                        </div>
+                        <div class="blog-content">
+                            <h3>Название мероприятия</h3>
+                            <h6>29 Мая 2020</h6>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut nisl non justo aliquam
+                                euismod ut ac orci.</p>
+                            <a href="blog.html">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Новости End -->
+
+    <!-- Наши выступления Start -->
+    <section class="gallery-area pt-90 pb-100 bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-xs-12">
+                    <div class="test-content">
+                        <div class="section-title text-center">
+                            <h2>Наши выступления</h2>
+                            <p>Фотоальбомы с наших последних выступлений </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="grid" style="position: relative; height: 390px;">
+                    <div class="col-md-4 col-sm-4 col-xs-12 grid-item cat1 cat3"
+                        style="position: absolute; left: 0%; top: 0px;">
+                        <a href="">
+                            <div class="portfolio-img single-img">
+                                <img src="{% static "img/portfolio/gal.jpg" %}" alt="project">
+                            </div>
+                            <div class="gallery-icon">
+                                <h3>Название альбома</h3>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4 col-xs-12 grid-item cat1 cat3"
+                        style="position: absolute; left: 0%; top: 0px;">
+                        <a href="">
+                            <div class="portfolio-img single-img">
+                                <img src="{% static "img/portfolio/gal.jpg" %}" alt="project">
+                            </div>
+                            <div class="gallery-icon">
+                                <h3>Название альбома</h3>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4 col-xs-12 grid-item cat1 cat3"
+                        style="position: absolute; left: 0%; top: 0px;">
+                        <a href="">
+                            <div class="portfolio-img single-img">
+                                <img src="{% static "img/portfolio/gal.jpg" %}" alt="project">
+                            </div>
+                            <div class="gallery-icon">
+                                <h3>Название альбома</h3>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4 col-xs-12 grid-item cat1 cat3"
+                        style="position: absolute; left: 0%; top: 0px;">
+                        <a href="">
+                            <div class="portfolio-img single-img">
+                                <img src="{% static "img/portfolio/gal.jpg" %}" alt="project">
+                            </div>
+                            <div class="gallery-icon">
+                                <h3>Название альбома</h3>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4 col-xs-12 grid-item cat1 cat3"
+                        style="position: absolute; left: 0%; top: 0px;">
+                        <a href="">
+                            <div class="portfolio-img single-img">
+                                <img src="{% static "img/portfolio/gal.jpg" %}" alt="project">
+                            </div>
+                            <div class="gallery-icon">
+                                <h3>Название альбома</h3>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4 col-xs-12 grid-item cat1 cat3"
+                        style="position: absolute; left: 0%; top: 0px;">
+                        <a href="">
+                            <div class="portfolio-img single-img">
+                                <img src="{% static "img/portfolio/gal.jpg" %}" alt="project">
+                            </div>
+                            <div class="gallery-icon">
+                                <h3>Название альбома</h3>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Наши выступления End -->
 
 {% endblock content %}
 
