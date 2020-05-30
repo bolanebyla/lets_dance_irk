@@ -17,6 +17,7 @@
 	06. Wow js
 	07. Portfolio Isotope
     08. Magnific Popup
+    09. Модальное окно
  
 ======================================
 [ End table content ]
@@ -282,4 +283,16 @@
     });
     
 	
-})(jQuery);  
+})(jQuery);
+
+/*--------------------------
+    09. Модальное окно
+---------------------------- */
+$(document).ready(function() {
+    // при нажатии на кнопку #show-modal
+    $('#show-modal').click(function() {
+        // открыть модальное окно #modal-example
+        $("#modal-call").modal('show');
+    });
+});
+
