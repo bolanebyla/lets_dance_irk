@@ -1,6 +1,8 @@
 {% extends "pages/base.html" %}
 {% load static %}
 
+{% block title %}Главня - Танцуй{% endblock title %}
+
 {% block content %}
 <!-- Modal-lesson Start -->
 <div class="modal fade" id="modal-lesson" tabindex="-1" role="dialog">
@@ -17,45 +19,50 @@
             <div class="modal-body">
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
                             Ipsum issss has been the industry's standard dummy text ever since the 1500s.</p>
-            <form role="form">
-                <div class="form-group">
-                    <label for="Child">ФИО ребёнка</label>
-                    <input type="text" class="form-control" id="Child" placeholder="Введите ФИО ребёнка">
-                 </div>
-            <div class="form-group">
-                <label for="Age">Возрастная категория</label>
-                    <!-- <input type="text" class="form-control" id="Age" placeholder="Введите возраст ребёнка">-->
-                    <select class="form-control" id="Age">
-                        <option>1-2 класс</option>
-                        <option>3-4 класс</option>
-                        <option>5-8 класс</option>
-                     </select>
-            </div>
+                <form role="form">
+                    <div class="form-group">
+                        <label for="Child">ФИО ребёнка</label>
+                        <input type="text" class="form-control" id="Child" placeholder="Введите ФИО ребёнка">
+                     </div>
+                    <div class="form-group">
+                        <label for="Age">Возрастная категория</label>
+                            <!-- <input type="text" class="form-control" id="Age" placeholder="Введите возраст ребёнка">-->
+                            <select class="form-control" id="Age">
+                                <option>1-2 класс</option>
+                                <option>3-4 класс</option>
+                                <option>5-8 класс</option>
+                             </select>
+                    </div>
 
-            <div class="form-group">
-                <label for="Name">Ваше ФИО</label>
-                <input type="text" class="form-control" id="Name" placeholder="Введите ваше ФИО">
-            </div>
+                    <div class="form-group">
+                        <label for="Name">Ваше ФИО</label>
+                        <input type="text" class="form-control" id="Name" placeholder="Введите ваше ФИО">
+                    </div>
 
-            <div class="form-group">
-                <label for="Number">Ваш номер телефона</label>
-                <input type="tel" class="form-control" id="Number" placeholder="Введите ваш номер телефона">
-            </div>
-           <div class="row">
-                <div class="col-xs-12 text-center">
-                    <button type="submit" class="banner-btn" data-text="Записаться"><span>Записаться</span></button>
-                </div>
-            </div>
-        </form>
-
+                    <div class="form-group">
+                        <label for="Number">Ваш номер телефона</label>
+                        <input type="tel" class="form-control" id="Number" placeholder="Введите ваш номер телефона">
+                    </div>
+                   <div class="row">
+                        <div class="col-xs-12 text-center">
+                            <button type="submit" class="banner-btn" data-text="Записаться"><span>Записаться</span></button>
+                        </div>
+                    </div>
+                </form>
             </div>
             <!-- подвал -->
             <!--<div class="modal-footer">-->
+                <!--<button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>-->
+                <!-- <button type="button" class="btn btn-primary">Сохранить</button>-->
             <!--</div>-->
-        </div>
+         </div>
     </div>
 </div>
 <!-- Modal-lesson End -->
+
+
+
+
 
 
 <!-- Background Area Start -->
@@ -238,7 +245,7 @@
                         <div class="trainer-info">
                             <h3>Парилова Мария Анатольевна</h3>
                             <br>
-                            <h4>тел. 8 (908) 646-04-55</h4>
+                            <a href="tel:+7 (908) 646-04-55"> <h4>тел. +7 (908) 646-04-55</h4></a>
                             <br>
 
                             <p>Художественный руководитель хореографического коллектива "Танцуй" - Парилова Мария
@@ -250,8 +257,8 @@
                                 курсы
                                 повышения квалификации. Девиз по жизни: Делай то, что любишь. Люби то, что делаешь ❣</p>
                             <ul>
-                                <li><a href="https://www.instagram.com/m_parilova/"><i class="fa fa-instagram"></i></a></li>
-                                <li><a href="https://vk.com/m_parilova"><i class="fa fa-vk"></i></a></li>
+                                <li><a target="_blank" href="https://www.instagram.com/m_parilova/"><h5><i class="fa fa-instagram"></i> Instagram</h5></a></li>
+                                <li><a target="_blank" href="https://vk.com/m_parilova"><h5><i class="fa fa-vk"></i> Вконтакте</h5></a></li>
                             </ul>
                         </div>
                     </div>

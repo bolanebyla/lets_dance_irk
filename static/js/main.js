@@ -288,11 +288,11 @@
 /*--------------------------
     09. Модальное окно
 ---------------------------- */
-$(document).ready(function() {
-    // при нажатии на кнопку #show-modal
-    $('#show-modal').click(function() {
-        // открыть модальное окно #modal-example
-        $("#modal-call").modal('show');
-    });
-});
 
+//$(document).ready(function() {
+//    // при нажатии на кнопку #show-modal
+//    $('#show-modal').click(function() {
+//        // открыть модальное окно #modal-call
+//        $("#modal-call").modal('show');
+//    });
+//});
