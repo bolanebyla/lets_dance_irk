@@ -6,6 +6,9 @@ from .models import LessonsSchoolStudents, LessonsPreschoolers, LessonsBallroomD
 def index(request):
     return render(request, 'pages/index.html', {'main_active': 'active'})
 
+def articles(request):
+    return render(request, 'pages/articles.html')
+
 
 # =======================================================================#
 

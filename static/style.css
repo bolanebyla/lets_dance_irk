@@ -8,6 +8,7 @@
     4. Руководитель
     5. Новости
     6. Наши выступления
+    7. Методические материалы
     
 #5FC7AE
 -----------------------------------------------------------------------------------*/
@@ -261,61 +262,78 @@ background-image: url("img/slider/slider1.jpg")
 /*  6. Наши выступления
 /*----------------------------------------*/
 .portfolio-img {
-    position: relative;
-    -webkit-transition: all 0.5s ease 0s;
-    -o-transition: all 0.5s ease 0s;
-    transition: all 0.5s ease 0s;
-  }
-  .portfolio-img::after {
-    background: rgba(165, 68, 173, 0.7) none repeat scroll 0 0 padding-box
-      content-box;
-    padding: 7px;
-  }
-  .portfolio-img::before {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    content: "";
-    opacity: 0;
-    background: rgba(255, 255, 255, 0.7);
-    -webkit-transition: all 0.5s ease 0s;
-    -o-transition: all 0.5s ease 0s;
-    transition: all 0.5s ease 0s;
-  }
-  .grid-item:hover .portfolio-img::before {
-    opacity: 1;
-  }
-  .grid-item:hover .portfolio-img {
-    box-shadow: 0px 0px 4px 4px #ececec;
-  }
-  .grid .grid-item:first-child,
-  .grid .grid-item:nth-child(2),
-  .grid .grid-item:nth-child(3),
-  .grid .grid-item:nth-child(4),
-  .grid .grid-item:nth-child(5),
-  .grid .grid-item:nth-child(6) {
-    padding-bottom: 30px;
-  }
-  .mfp-wrap.mfp-gallery.mfp-close-btn-in.mfp-auto-cursor.mfp-ready {
-    z-index: 99999;
-  }
-  .load a {
-    background: #008c99;
-    color: #fff;
-    text-transform: uppercase;
-    padding: 5px 25px 4px;
-    font-size: 14px;
-    text-align: center;
-    display: inline-block;
-    margin-top: 50px;
-    -webkit-transition: all 0.5s ease 0s;
-    -o-transition: all 0.5s ease 0s;
-    transition: all 0.5s ease 0s;
-  }
-  .load a:hover {
-    color: #008c99;
-  }
-  /*----------------------------------------*/
+  position: relative;
+  -webkit-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+.portfolio-img::after {
+  background: rgba(165, 68, 173, 0.7) none repeat scroll 0 0 padding-box
+    content-box;
+  padding: 7px;
+}
+.portfolio-img::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  opacity: 0;
+  background: rgba(255, 255, 255, 0.7);
+  -webkit-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+.grid-item:hover .portfolio-img::before {
+  opacity: 1;
+}
+.grid-item:hover .portfolio-img {
+  box-shadow: 0px 0px 4px 4px #ececec;
+}
+.grid .grid-item:first-child,
+.grid .grid-item:nth-child(2),
+.grid .grid-item:nth-child(3),
+.grid .grid-item:nth-child(4),
+.grid .grid-item:nth-child(5),
+.grid .grid-item:nth-child(6) {
+  padding-bottom: 30px;
+}
+.mfp-wrap.mfp-gallery.mfp-close-btn-in.mfp-auto-cursor.mfp-ready {
+  z-index: 99999;
+}
+.load a {
+  background: #008c99;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 5px 25px 4px;
+  font-size: 14px;
+  text-align: center;
+  display: inline-block;
+  margin-top: 50px;
+  -webkit-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+.load a:hover {
+  color: #008c99;
+}
 
+/*----------------------------------------*/
+/*  7. Методические материалы
+/*----------------------------------------*/
+.articles-categories a {
+  color: #757575;
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  text-transform: capitalize;
+  -webkit-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+
+}
+
+.articles-categories a:hover {
+  color: rgb(165, 68, 173);
+}
