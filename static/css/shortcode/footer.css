@@ -66,7 +66,7 @@ NOTE: This is Footer style file. All footer related style included in this file.
 .single-footer-widget button, .contact-form button{
     background: rgb(165, 68, 173) none repeat scroll 0 0;
     color: #fff;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
     font-weight: 600;
     font-size: 14px;
     font-family: 'Montserrat', sans-serif;

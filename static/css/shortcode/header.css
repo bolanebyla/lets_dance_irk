@@ -29,7 +29,7 @@ NOTE: This is Header style file. All Header related style included in this file.
     line-height: 64px;
     padding: 0 20px;
     position: relative;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
     font-family: 'Montserrat', sans-serif;
     -webkit-transition: all 0.4s ease 0s;
     transition: all 0.4s ease 0s;
@@ -67,7 +67,7 @@ NOTE: This is Header style file. All Header related style included in this file.
     font-size: 14px;
     line-height: 26px;
     padding: 0;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
 }
 .main-menu ul li ul span {
     float: right;

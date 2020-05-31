@@ -608,7 +608,7 @@ textarea {
 .section-title h2{
     color: #676767;
     font-size: 36px;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     margin-bottom: 40px;
@@ -664,7 +664,7 @@ textarea {
     font-family: 'Playfair Display', serif;
     line-height: 26px;
     margin-bottom: 24px;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
     font-size: 36px;
 }
 .breadcrumb-bar li {
@@ -735,7 +735,7 @@ textarea {
 }
 .banner-breadcrumb ul li, .banner-breadcrumb ul li a{
     display: inline-block;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
     font-family: 'Lato', sans-serif;
     font-size: 18px;
     color: #fff;
