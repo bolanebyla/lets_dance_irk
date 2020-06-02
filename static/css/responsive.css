@@ -43,6 +43,7 @@
     .col-md-4:last-child .single-class, .col-md-4:last-child .single-trainer, .col-md-6:last-child .single-blog, .blog-area .col-md-6:last-child, .col-md-4:last-child .single-table, .col-md-4:last-child .single-footer-widget{margin-bottom: 0px}
     .event-content p {padding: 0 15px}
     .blog-pic, .blog-pic.single-img > img, .blog-content, .single-trainer.text-center > img, .single-img img, .portfolio-img.single-img > img, .portfolio-img.single-img, .single-img {width: 100%}
+    .blog-pic {padding-bottom: 0px}
     .single-testimonial {margin: 50px 35px; padding: 69px 15px}
     #mc-form {width: 300px}
     .newsletter-wrapper{padding: 55px 10px}
