@@ -5,8 +5,8 @@ from django.contrib.auth.models import User
 
 
 class ArticlesCategories(models.Model):
-    category = models.CharField('Категория', max_length=250)
-    slug = models.SlugField('Ссылка', max_length=250)
+    category = models.CharField('Категория', max_length=250, unique=True)
+    slug = models.SlugField('Ссылка', max_length=250, unique=True)
 
     class Meta:
         verbose_name = 'категории'
@@ -23,7 +23,7 @@ class Articles(models.Model):
     )
     title = models.CharField('Название', max_length=250)
     category = models.ForeignKey(ArticlesCategories, on_delete=models.DO_NOTHING)
-    slug = models.SlugField('Ссылка', max_length=250, unique_for_date='updated')
+    slug = models.SlugField('Ссылка', max_length=250, unique=True)
     cover = models.ImageField('Превью', upload_to='images/')
     author = models.CharField('Автор', max_length=250)
     description = models.TextField('Описание')

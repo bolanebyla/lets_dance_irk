@@ -10,7 +10,6 @@ def index(request):
 def articles(request):
     posts = Articles.objects.filter(status='published')
     categories = ArticlesCategories.objects.all()
-    posts[0].cover.url
     data = {
         'posts': posts,
         'categories': categories
@@ -18,8 +17,27 @@ def articles(request):
     return render(request, 'pages/articles.html', data)
 
 
-def item_articles(request):
-    return render(request, 'pages/item_articles.html')
+def category_articles(request, slug):
+    category = ArticlesCategories.objects.filter(slug=slug)
+    posts = Articles.objects.filter(status='published').filter(category=category[0].id)
+    categories = ArticlesCategories.objects.all()
+    data = {
+        'category': category[0].category,
+        'posts': posts,
+        'categories': categories
+    }
+    return render(request, 'pages/articles.html', data)
+
+
+def item_articles(request, slug):
+    post = Articles.objects.filter(slug=slug)
+    categories = ArticlesCategories.objects.all()
+    print(post)
+    data = {
+        'post': post[0],
+        'categories': categories
+    }
+    return render(request, 'pages/item_articles.html', data)
 
 
 def news(request):

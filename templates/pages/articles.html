@@ -40,10 +40,15 @@
         <div class="row">
             <div class="col-md-8 col-sm-12 col-xs-12">
                 <div class="row">
-                    <h3>Последние публикации</h3>
-                    <div class="mt-10"></div>
-                    {% for post in posts %}
                     <div class="col-md-12 col-sm-12 col-xs-12 ">
+                        {% if category%}
+                        <h3>{{ category }}</h3>
+                        {% else %}
+                        <h3>Последние публикации</h3>
+                        {% endif %}
+                        <div class="mt-10"></div>
+                        {% for post in posts %}
+
                         <div class="articles-content">
                             <div class="single-blog">
                                 <div class="blog-pic single-img">
@@ -60,8 +65,9 @@
                                 </div>
                             </div>
                         </div>
+                        {% endfor %}
                     </div>
-                    {% endfor %}
+
                 </div>
             </div>
 

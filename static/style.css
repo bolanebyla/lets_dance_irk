@@ -220,6 +220,7 @@ background-image: url("img/slider/slider1.jpg")
   display: inline-block;
   float: left;
   padding: 35px 0;
+  padding-left: 30px;
   
 }
 .single-blog {
@@ -378,5 +379,41 @@ background-image: url("img/slider/slider1.jpg")
   transition: all 0.5s ease 0s;
 }
 .news-content a:hover {
+  color: rgb(165, 68, 173);
+}
+/*----------------------------------------*/
+/*  9. Одна статья 
+/*----------------------------------------*/
+
+.article-content {
+
+}
+.article-content h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 30px;
+  color: #757575;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+.article-content h6 {
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  color: #aaaaaa;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+.article-content p {
+  margin-bottom: 15px;
+}
+.article-content a {
+  color: #757575;
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  -webkit-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+.article-content a:hover {
   color: rgb(165, 68, 173);
 }
