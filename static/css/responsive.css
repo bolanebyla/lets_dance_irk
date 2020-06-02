@@ -13,7 +13,7 @@
     .single-content ul {padding: 20px 0 20px 15px}
     .single-content ul li{margin-right: 5px}
     .blog-content h6 {display: none}
-    .blog-content {padding: 12px 30px}
+    /* .blog-content {padding: 12px 30px} */
     .game img{width: 100%}
 
 }
@@ -26,7 +26,7 @@
     .about-content{margin-bottom: 30px}
     .blog-area .col-md-6:last-child .single-blog{margin-top: 30px}
     .about-video{display: block;}
-    .blog-content { margin-top: 60px}
+    /* .blog-content { margin-top: 60px} */
     .single-testimonial {padding: 48px 35px}
     #mc-form {width: 625px}
 }

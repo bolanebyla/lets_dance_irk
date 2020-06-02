@@ -219,8 +219,8 @@ background-image: url("img/slider/slider1.jpg")
   width: 30%;
   display: inline-block;
   float: left;
-  padding: 35px 0;
-  padding-left: 30px;
+  padding: 35px 20px 0px;
+  /* padding-left: 30px; */
   
 }
 .single-blog {
@@ -228,7 +228,7 @@ background-image: url("img/slider/slider1.jpg")
 }
 .blog-content {
   float: left;
-  padding: 35px 30px;
+  padding: 35px 20px;
   width: 70%;
 }
 .blog-content h3 {
@@ -331,7 +331,6 @@ background-image: url("img/slider/slider1.jpg")
   font-size: 14px;
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
-  /* text-transform: capitalize; */
   -webkit-transition: all 0.5s ease 0s;
   -o-transition: all 0.5s ease 0s;
   transition: all 0.5s ease 0s;
@@ -385,8 +384,8 @@ background-image: url("img/slider/slider1.jpg")
 /*  9. Одна статья 
 /*----------------------------------------*/
 
-.article-content {
-
+.article-content iframe{
+  max-width: 100%;
 }
 .article-content h3 {
   font-family: "Montserrat", sans-serif;
@@ -404,6 +403,7 @@ background-image: url("img/slider/slider1.jpg")
 }
 .article-content p {
   margin-bottom: 15px;
+  
 }
 .article-content a {
   color: #757575;
