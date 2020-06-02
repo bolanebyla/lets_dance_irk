@@ -1,8 +1,44 @@
 from django import forms
 from django.contrib import admin
-from .models import LessonsBallroomDancing, LessonsPreschoolers, LessonsSchoolStudents
+from .models import Articles, ArticlesCategories, LessonsBallroomDancing, LessonsPreschoolers, LessonsSchoolStudents
 
 from ckeditor_uploader.widgets import CKEditorUploadingWidget
+
+
+# Методические материалы
+class ArticlesCategoriesForm(forms.ModelForm):
+    class Meta:
+        model = ArticlesCategories
+        fields = '__all__'
+
+
+class ArticlesCategoriesAdmin(admin.ModelAdmin):
+    form = ArticlesCategoriesForm
+    prepopulated_fields = {'slug': ('category',)}
+
+
+admin.site.register(ArticlesCategories, ArticlesCategoriesAdmin)
+
+
+class ArticlesAdminForm(forms.ModelForm):
+    body = forms.CharField(label='Основной текст', widget=CKEditorUploadingWidget())
+
+    class Meta:
+        model = Articles
+        fields = '__all__'
+
+
+class ArticlesAdmin(admin.ModelAdmin):
+    form = ArticlesAdminForm
+    list_display = ('title', 'slug', 'category', 'author', 'updated', 'status')
+    list_filter = ('status', 'updated', 'created', 'category', 'author')
+    search_fields = ('title', 'body')
+    prepopulated_fields = {'slug': ('title',)}
+    date_hierarchy = 'updated'
+    ordering = ('status', 'updated')
+
+
+admin.site.register(Articles, ArticlesAdmin)
 
 
 # Бальные танцы
@@ -18,7 +54,7 @@ class LessonsBallroomDancingAdmin(admin.ModelAdmin):
     form = LessonsBallroomDancingAdminForm
 
 
-admin.site.register(LessonsBallroomDancing, LessonsBallroomDancingAdmin)
+# admin.site.register(LessonsBallroomDancing, LessonsBallroomDancingAdmin)
 
 
 # =======================================================================#
@@ -36,7 +72,7 @@ class LessonsPreschoolersAdmin(admin.ModelAdmin):
     form = LessonsPreschoolersAdminForm
 
 
-admin.site.register(LessonsPreschoolers, LessonsPreschoolersAdmin)
+# admin.site.register(LessonsPreschoolers, LessonsPreschoolersAdmin)
 
 
 # =======================================================================#
@@ -53,7 +89,6 @@ class LessonsSchoolStudentsAdminForm(forms.ModelForm):
 class LessonsSchoolStudentsAdmin(admin.ModelAdmin):
     form = LessonsSchoolStudentsAdminForm
 
-
-admin.site.register(LessonsSchoolStudents, LessonsSchoolStudentsAdmin)
+# admin.site.register(LessonsSchoolStudents, LessonsSchoolStudentsAdmin)
 
 # =======================================================================#

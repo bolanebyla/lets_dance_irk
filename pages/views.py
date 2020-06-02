@@ -1,13 +1,35 @@
 from django.shortcuts import render, HttpResponse
 from django.http import HttpResponseNotFound
-from .models import LessonsSchoolStudents, LessonsPreschoolers, LessonsBallroomDancing
+from .models import Articles, ArticlesCategories, LessonsSchoolStudents, LessonsPreschoolers, LessonsBallroomDancing
 
 
 def index(request):
     return render(request, 'pages/index.html', {'main_active': 'active'})
 
+
 def articles(request):
-    return render(request, 'pages/articles.html')
+    posts = Articles.objects.filter(status='published')
+    categories = ArticlesCategories.objects.all()
+    posts[0].cover.url
+    data = {
+        'posts': posts,
+        'categories': categories
+    }
+    return render(request, 'pages/articles.html', data)
+
+
+def item_articles(request):
+    return render(request, 'pages/item_articles.html')
+
+
+def news(request):
+    data = {}
+    return render(request, 'pages/news.html', data)
+
+
+def item_news(request):
+    data = {}
+    return render(request, 'pages/item_news.html', data)
 
 
 # =======================================================================#
@@ -72,9 +94,3 @@ def oneLesson(request, direction, lesson_name):
     }
 
     return render(request, 'pages/lesson.html', data)
-
-
-def news(request):
-    data = {}
-    return render(request, 'pages/news.html', data)
-

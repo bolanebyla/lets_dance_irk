@@ -9,6 +9,8 @@
     5. Новости
     6. Наши выступления
     7. Методические материалы
+    8. Одна новость
+    9. Одна статья 
     
 #5FC7AE
 -----------------------------------------------------------------------------------*/
@@ -217,15 +219,15 @@ background-image: url("img/slider/slider1.jpg")
   width: 30%;
   display: inline-block;
   float: left;
+  padding: 35px 0;
+  
 }
 .single-blog {
   display: inline-block;
 }
 .blog-content {
-  box-shadow: 0 0 4px 4px #f4f4f4;
   float: left;
   padding: 35px 30px;
-  margin-top: 20px;
   width: 70%;
 }
 .blog-content h3 {
@@ -249,8 +251,7 @@ background-image: url("img/slider/slider1.jpg")
   color: #757575;
   font-size: 14px;
   font-family: "Montserrat", sans-serif;
-  font-weight: 500;
-  /* text-transform: capitalize; */ 
+  font-weight: 500; 
   -webkit-transition: all 0.5s ease 0s;
   -o-transition: all 0.5s ease 0s;
   transition: all 0.5s ease 0s;
@@ -318,10 +319,12 @@ background-image: url("img/slider/slider1.jpg")
 .load a:hover {
   color: #008c99;
 }
-
 /*----------------------------------------*/
 /*  7. Методические материалы
 /*----------------------------------------*/
+.articles-content{
+  box-shadow: 0 0 4px 4px #f4f4f4;
+}
 .articles-categories a {
   color: #757575;
   font-size: 14px;
@@ -335,5 +338,45 @@ background-image: url("img/slider/slider1.jpg")
 }
 
 .articles-categories a:hover {
+  color: rgb(165, 68, 173);
+}
+/*----------------------------------------*/
+/*  8. Одна новость
+/*----------------------------------------*/
+
+.news-content {
+  /* box-shadow: 0 0 4px 4px #f4f4f4;
+  float: left; */
+  padding: 35px 30px;
+  /* margin-top: 20px; */
+  width: 100%;
+}
+.news-content h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  color: #757575;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+.news-content h6 {
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  color: #aaaaaa;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+.news-content p {
+  margin-bottom: 15px;
+}
+.news-content a {
+  color: #757575;
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  -webkit-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+.news-content a:hover {
   color: rgb(165, 68, 173);
 }

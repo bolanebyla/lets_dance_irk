@@ -20,20 +20,17 @@
 
 
         <div class="articles-categories">
-
-            <a class="collapsed hidden-lg hidden-md list-group-item" data-toggle="collapse" data-target="#navbar-articles">
+            <a class="collapsed hidden-lg hidden-md list-group-item" data-toggle="collapse"
+                data-target="#navbar-articles">
                 <p class="zmdi zmdi-view-headline"> Категории</p>
             </a>
-
 
             <div class="hidden-lg hidden-md">
 
                 <ul class="list-group collapse mt-10" id="navbar-articles">
-                    <li class="list-group-item"><a href="">Category 1</a></li>
-                    <li class="list-group-item"><a href="">Category 2</a></li>
-                    <li class="list-group-item"><a href="">Category 3</a></li>
-                    <li class="list-group-item"><a href="">Category 4</a></li>
-                    <li class="list-group-item"><a href="">Category 5</a></li>
+                    {% for category in categories %}
+                    <li class="list-group-item"><a href="/articles/{{category.slug}}">{{category.category}}</a></li>
+                    {% endfor %}
                 </ul>
             </div>
             <br>
@@ -42,40 +39,29 @@
 
         <div class="row">
             <div class="col-md-8 col-sm-12 col-xs-12">
-
                 <div class="row">
                     <h3>Последние публикации</h3>
                     <div class="mt-10"></div>
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                        <div class="single-blog">
-                            <div class="blog-pic single-img">
-                                <img src="{% static "img/blog/blog1.jpg" %}" alt="blog">
-                            </div>
-                            <div class="blog-content">
-                                <h3>Название статьи</h3>
-                                <h6>29 Мая 2020</h6>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut nisl non justo
-                                    aliquam
-                                    euismod ut ac orci.</p>
-                                <a href="blog.html">Читать</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                        <div class="single-blog">
-                            <div class="blog-pic single-img">
-                                <img src="{% static "img/blog/blog1.jpg" %}" alt="blog">
-                            </div>
-                            <div class="blog-content">
-                                <h3>Название статьи</h3>
-                                <h6>29 Мая 2020</h6>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut nisl non justo
-                                    aliquam
-                                    euismod ut ac orci.</p>
-                                <a href="blog.html">Читать</a>
+                    {% for post in posts %}
+                    <div class="col-md-12 col-sm-12 col-xs-12 ">
+                        <div class="articles-content">
+                            <div class="single-blog">
+                                <div class="blog-pic single-img">
+                                    <img src="{{ post.cover.url }}" alt="">
+                                </div>
+                                <div class="blog-content">
+
+                                    <h3>{{ post.title }}</h3>
+                                    <h6>{{ post.updated }} </h6>
+                                    <!-- Автор {{ post.author }} -->
+
+                                    <p>{{ post.description }}</p>
+                                    <a href="/articles/item/{{post.slug}}">Читать</a>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    {% endfor %}
                 </div>
             </div>
 
@@ -83,11 +69,9 @@
                 <div class="hidden-sm hidden-xs">
                     <h3>Категории</h3>
                     <ul class="list-group collapse in mt-10">
-                        <li class="list-group-item"><a href="">Category 1</a></li>
-                        <li class="list-group-item"><a href="">Category 2</a></li>
-                        <li class="list-group-item"><a href="">Category 3</a></li>
-                        <li class="list-group-item"><a href="">Category 4</a></li>
-                        <li class="list-group-item"><a href="">Category 5</a></li>
+                        {% for category in categories %}
+                        <li class="list-group-item"><a href="/articles/{{category.slug}}">{{category.category}}</a></li>
+                        {% endfor %}
                     </ul>
                 </div>
             </div>
