@@ -1,11 +1,35 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, get_object_or_404
 from django.http import HttpResponseNotFound
+from django.core.mail import send_mail
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import Articles, ArticlesCategories, LessonsSchoolStudents, LessonsPreschoolers, LessonsBallroomDancing
+from .forms import ModalLesson
+from lets_dance_irk.email_config import EMAIL_TO_SEND
 
 
 def index(request):
-    return render(request, 'pages/index.html', {'main_active': 'active'})
+    sent = False
+    if request.method == 'POST':
+        # Form was submitted
+        form = ModalLesson(request.POST)
+        if form.is_valid():
+            # Form fields passed validation
+            cd = form.cleaned_data
+            child_name = cd['child_name']
+            age = cd['age']
+            parent_name = cd['parent_name']
+            phone_number = cd['phone_number']
+            subject = f'Пробное занятие {age}'
+            message = f'ФИО ребёнка: {child_name}\n' \
+                      f'Возраст: {age}\n' \
+                      f'ФИО родителя: {parent_name}\n' \
+                      f'Номер телефона: {phone_number}'
+            send_mail(subject, message, 'admin@myblog.com', [EMAIL_TO_SEND], fail_silently=False)
+            sent = True
+
+    else:
+        form = ModalLesson()
+    return render(request, 'pages/index.html', {'form': form, 'sent': sent})
 
 
 def articles(request):

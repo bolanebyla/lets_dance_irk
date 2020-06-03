@@ -13,7 +13,7 @@ urlpatterns = [
 
     path('news', views.news),
     path('articles', views.articles),
-
+    # path('share', views.post_share),
     path('', views.index, name='home'),
 ]
 

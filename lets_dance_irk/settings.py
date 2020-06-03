@@ -38,6 +38,7 @@ INSTALLED_APPS = [
 
     'ckeditor',
     'ckeditor_uploader',
+    'django_forms_bootstrap',
     'pages',
 ]
 
@@ -100,12 +101,21 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# EMAIL
+from . import email_config
+
+EMAIL_HOST = email_config.EMAIL_HOST
+EMAIL_HOST_USER = email_config.EMAIL_HOST_USER
+EMAIL_HOST_PASSWORD = email_config.EMAIL_HOST_PASSWORD
+EMAIL_PORT = email_config.EMAIL_PORT
+EMAIL_USE_TLS = email_config.EMAIL_USE_TLS
+
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
 LANGUAGE_CODE = 'ru-ru'
 
-TIME_ZONE = 'Asia/Irkutsk' #'UTC'
+TIME_ZONE = 'Asia/Irkutsk'  # 'UTC'
 
 USE_I18N = True
 
@@ -122,7 +132,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 
-#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
