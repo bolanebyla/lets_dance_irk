@@ -26,6 +26,7 @@
             <div class="hidden-lg hidden-md">
 
                 <ul class="list-group collapse mt-10" id="navbar-articles">
+                    <li class="list-group-item"><a href="/articles">Последние публикации</a></li>
                     {% for category in categories %}
                     <li class="list-group-item"><a href="/articles/{{category.slug}}">{{category.category}}</a></li>
                     {% endfor %}
@@ -50,6 +51,7 @@
                 <div class="hidden-sm hidden-xs">
                     <h3>Категории</h3>
                     <ul class="list-group collapse in mt-10">
+                        <li class="list-group-item"><a href="/articles">Последние публикации</a></li>
                         {% for category in categories %}
                         <li class="list-group-item"><a href="/articles/{{category.slug}}">{{category.category}}</a>
                         </li>
