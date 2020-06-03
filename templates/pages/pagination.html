@@ -1,0 +1,25 @@
+{% if page.paginator.num_pages > 1 %}
+<div class="row">
+    <div class="col-md-8 col-sm-12 col-xs-12 text-center mt-50">
+        <ul class="pagination">
+            {% if page.has_previous %}
+            <li><a href="?page={{ page.previous_page_number }}">«</a></li>
+            {% endif %}
+
+            {% for number in page.paginator.page_range %}
+            {% if number == page.number %}
+            <li><a class="active" href="#">{{number}}</a></li>
+            {% else %}
+            <li><a href="?page= {{ number }}">{{ number }}</a></li>
+            {% endif %}
+
+            {% endfor %}
+            {% if page.has_next %}
+            <li><a href="?page={{ page.next_page_number }}">»</a></li>
+            {% endif %}
+
+        </ul>
+    </div>
+</div>
+</div>
+{% endif %}

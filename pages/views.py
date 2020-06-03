@@ -1,5 +1,6 @@
 from django.shortcuts import render, HttpResponse
 from django.http import HttpResponseNotFound
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import Articles, ArticlesCategories, LessonsSchoolStudents, LessonsPreschoolers, LessonsBallroomDancing
 
 
@@ -8,11 +9,23 @@ def index(request):
 
 
 def articles(request):
-    posts = Articles.objects.filter(status='published')
+    object_list = Articles.objects.filter(status='published')
+    paginator = Paginator(object_list, 10)  # 10 posts in each page
+    page = request.GET.get('page')
+    try:
+        posts = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer deliver the first page
+        posts = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range deliver last page of results
+        posts = paginator.page(paginator.num_pages)
+
     categories = ArticlesCategories.objects.all()
     data = {
         'posts': posts,
-        'categories': categories
+        'categories': categories,
+        'page': page
     }
     return render(request, 'pages/articles.html', data)
 
@@ -32,7 +45,6 @@ def category_articles(request, slug):
 def item_articles(request, slug):
     post = Articles.objects.filter(slug=slug)
     categories = ArticlesCategories.objects.all()
-    print(post)
     data = {
         'post': post[0],
         'categories': categories

@@ -7,7 +7,7 @@
 
 
 <!-- Методические материалы Start -->
-<section class="blog-area pt-95 pb-100 ">
+<section class="blog-area pt-95 pb-50">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-xs-12">
@@ -28,6 +28,7 @@
             <div class="hidden-lg hidden-md">
 
                 <ul class="list-group collapse mt-10" id="navbar-articles">
+                    <li class="list-group-item"><a href="/articles">Последние публикации</a></li>
                     {% for category in categories %}
                     <li class="list-group-item"><a href="/articles/{{category.slug}}">{{category.category}}</a></li>
                     {% endfor %}
@@ -75,17 +76,25 @@
                 <div class="hidden-sm hidden-xs">
                     <h3>Категории</h3>
                     <ul class="list-group collapse in mt-10">
+                        <li class="list-group-item"><a href="/articles">Последние публикации</a></li>
                         {% for category in categories %}
                         <li class="list-group-item"><a href="/articles/{{category.slug}}">{{category.category}}</a></li>
                         {% endfor %}
                     </ul>
                 </div>
             </div>
-
         </div>
+
+        <!-- pagination Start -->
+        {% include "pages/pagination.html" with page=posts %}
+        <!-- pagination End -->
+
     </div>
 </section>
 <!-- Методические материалы End -->
+
+
+
 
 <section class="bg-gray">
 
