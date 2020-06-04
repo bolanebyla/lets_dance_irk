@@ -12,7 +12,7 @@ class ModalLesson(forms.Form):
     age = forms.ChoiceField(label='Возрастная категория', choices=choices)
     parent_name = forms.CharField(label='Ваше ФИО', max_length=25,
                                   widget=forms.TextInput(attrs={'placeholder': 'Введите ваше ФИО'}))
-    phone_number = forms.CharField(label='Ваш номер телефона', max_length=25,
+    phone_number = forms.CharField(label='Ваш номер телефона', max_length=12,
                                    widget=forms.TextInput(
                                        attrs={'placeholder': 'Введите ваш номер телефона', 'type': 'tel'}))
 

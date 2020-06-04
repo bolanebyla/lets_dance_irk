@@ -14,6 +14,7 @@ urlpatterns = [
     path('news', views.news),
     path('articles', views.articles),
     # path('share', views.post_share),
+    path('successful_entry', views.successful_entry),
     path('', views.index, name='home'),
 ]
 

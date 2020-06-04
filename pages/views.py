@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse, get_object_or_404
+from django.shortcuts import render, HttpResponse, get_object_or_404, HttpResponseRedirect
 from django.http import HttpResponseNotFound
 from django.core.mail import send_mail
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
@@ -8,7 +8,6 @@ from lets_dance_irk.email_config import EMAIL_TO_SEND
 
 
 def index(request):
-    sent = False
     if request.method == 'POST':
         # Form was submitted
         form = ModalLesson(request.POST)
@@ -25,11 +24,16 @@ def index(request):
                       f'ФИО родителя: {parent_name}\n' \
                       f'Номер телефона: {phone_number}'
             send_mail(subject, message, 'admin@myblog.com', [EMAIL_TO_SEND], fail_silently=False)
-            sent = True
+            return HttpResponseRedirect('successful_entry')
 
     else:
         form = ModalLesson()
-    return render(request, 'pages/index.html', {'form': form, 'sent': sent})
+    return render(request, 'pages/index.html', {'form': form})
+
+
+# Успешная запись на занятие
+def successful_entry(request):
+    return render(request, 'pages/successful_entry.html')
 
 
 def articles(request):
