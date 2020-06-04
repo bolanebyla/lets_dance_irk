@@ -383,6 +383,9 @@ background-image: url("img/slider/slider1.jpg")
 /*----------------------------------------*/
 /*  9. Одна статья 
 /*----------------------------------------*/
+.article-content{
+  min-height: 100%;
+}
 .article-content img{
   max-width: 100%;
 }
