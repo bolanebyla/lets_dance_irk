@@ -9,7 +9,72 @@
 <!-- Новости (Blog) Start -->
 <section class="blog-area pt-95 pb-100 ">
     <div class="container">
+
         <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-xs-12">
+                <div class="section-title text-center">
+                    <h2>Новости</h2>
+                    <p>Жизнь нашего коллектива </p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-sm-12 col-xs-12">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 ">
+                        <h3>Самое интересное за последнее время</h3>
+                        <div class="mt-10"></div>
+                        {% for news_item in news %}
+                        <div class="articles-content">
+                            <div class="single-blog">
+                                <div class="blog-pic single-img">
+                                    <img src="{{ news_item.cover.url }}" alt="">
+                                </div>
+                                <div class="blog-content">
+
+                                    <h3>{{ news_item.title }}</h3>
+                                    <h6>{{ news_item.updated }} </h6>
+                                    <p>{{ news_item.description }}</p>
+                                    <a href="/news/item/{{news_item.slug}}">Читать</a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            
+
+            <div class="col-md-4 col-sm-12 col-xs-12 articles-categories">
+                <div class="hidden-sm hidden-xs">
+                    <h3>Последние публикации</h3>
+                    <div class="mt-10"></div>
+                    <!-- {% for post in posts %}
+
+                    <div class="articles-content">
+                        <div class="single-blog">
+                            <div class="blog-content">
+
+                                <h3>{{ post.title }}</h3>
+                                <h6>{{ post.updated }} </h6>
+                                <a href="/articles/item/{{post.slug}}">Читать</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %} -->
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <!-- <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-xs-12">
                 <div class="section-title text-center">
                     <h2>Новости</h2>
@@ -106,10 +171,13 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
+        <!-- pagination Start -->
+        {% include "pages/pagination.html" with page=posts %}
+        <!-- pagination End -->
     </div>
 </section>
 <!-- Новости (Blog) End -->
 
 <section class="bg-gray">
-{% endblock content %}
+    {% endblock content %}

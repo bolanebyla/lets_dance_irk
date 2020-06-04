@@ -16,7 +16,7 @@ from django.shortcuts import render, HttpResponse, get_object_or_404, HttpRespon
 from django.http import HttpResponseNotFound
 from django.core.mail import send_mail
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from .models import Articles, ArticlesCategories
+from .models import Articles, ArticlesCategories, News
 from .forms import ModalLesson
 from lets_dance_irk.email_config import EMAIL_TO_SEND
 
@@ -112,13 +112,34 @@ def item_articles(request, slug):
 # 6. Новости
 # ----------------------------------------#
 def news(request):
-    data = {}
+    object_list = News.objects.filter(status='published')
+    paginator = Paginator(object_list, 10)  # 10 posts in each page
+    page = request.GET.get('page')
+    try:
+        news_list = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer deliver the first page
+        news_list = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range deliver last page of results
+        news_list = paginator.page(paginator.num_pages)
+
+    last_articles = Articles.objects.filter(status='published')[:2]
+    data = {
+        'news': news_list,
+        'page': page,
+        'posts': last_articles
+    }
     return render(request, 'pages/news.html', data)
 
 
 # ----------------------------------------#
 # 7. Одна новость
 # ----------------------------------------#
-def item_news(request):
-    data = {}
+def item_news(request, slug):
+    news_item = News.objects.filter(slug=slug)
+
+    data = {
+        'news': news_item[0]
+    }
     return render(request, 'pages/item_news.html', data)
