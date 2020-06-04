@@ -1,9 +1,22 @@
+# -----------------------------------------------------------------------------------#
+#
+# pages/models.py
+# ===================
+# 1. Категории методических матриалов
+# 2. Методические материалы
+# 3. Новости
+#
+# -----------------------------------------------------------------------------------#
+
 from django.db import models
 from django.utils import timezone
 from datetime import date
 from django.contrib.auth.models import User
 
 
+# ----------------------------------------#
+# 1. Категории методических матриалов
+# ----------------------------------------#
 class ArticlesCategories(models.Model):
     category = models.CharField('Категория', max_length=250, unique=True)
     slug = models.SlugField('Ссылка', max_length=250, unique=True)
@@ -16,6 +29,9 @@ class ArticlesCategories(models.Model):
         return self.category
 
 
+# ----------------------------------------#
+# 2. Методические материалы
+# ----------------------------------------#
 class Articles(models.Model):
     STATUS_CHOICES = (
         ('draft', 'Черновик'),
@@ -42,41 +58,27 @@ class Articles(models.Model):
         return self.title
 
 
-# ================OLD===========================
-class LessonsPreschoolers(models.Model):
-    name = models.CharField('Название урока', max_length=150)
-    description = models.TextField('Краткое описание урока')
-    text = models.TextField('Основной текст')
-
-    def __str__(self):
-        return self.name
-
-    class Meta:
-        verbose_name = 'урок для дошкольников'
-        verbose_name_plural = 'Уроки для дошкольников'
-
-
-class LessonsSchoolStudents(models.Model):
-    name = models.CharField('Название урока', max_length=150)
-    description = models.TextField('Краткое описание урока')
-    text = models.TextField('Основной текст')
-
-    def __str__(self):
-        return self.name
+# ----------------------------------------#
+# 3. Новости
+# ----------------------------------------#
+class News(models.Model):
+    STATUS_CHOICES = (
+        ('draft', 'Черновик'),
+        ('published', 'Опубликовано'),
+    )
+    title = models.CharField('Название', max_length=250)
+    slug = models.SlugField('Ссылка', max_length=250, unique=True)
+    cover = models.ImageField('Превью', upload_to='images/')
+    description = models.TextField('Описание')
+    body = models.TextField('Основной текст')
+    created = models.DateTimeField('Дата создания', auto_now_add=True)
+    updated = models.DateTimeField('Дата последнего редактирования', auto_now=True)
+    status = models.CharField('Статус', max_length=15, choices=STATUS_CHOICES, default='draft')
 
     class Meta:
-        verbose_name = 'урок для школьников'
-        verbose_name_plural = 'Уроки для школьников'
-
-
-class LessonsBallroomDancing(models.Model):
-    name = models.CharField('Название урока', max_length=150)
-    description = models.TextField('Краткое описание урока')
-    text = models.TextField('Основной текст')
+        ordering = ('-updated',)
+        verbose_name = 'новости'
+        verbose_name_plural = 'Новости'
 
     def __str__(self):
-        return self.name
-
-    class Meta:
-        verbose_name = 'урок по бальным танцам'
-        verbose_name_plural = 'Уроки по бальным танцам'
+        return self.title

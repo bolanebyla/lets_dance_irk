@@ -1,11 +1,23 @@
+# -----------------------------------------------------------------------------------#
+#
+# pages/admin.py
+# ===================
+# 1. Категории методических матриалов
+# 2. Методические материалы
+# 3. Новости
+#
+# -----------------------------------------------------------------------------------#
+
 from django import forms
 from django.contrib import admin
-from .models import Articles, ArticlesCategories, LessonsBallroomDancing, LessonsPreschoolers, LessonsSchoolStudents
+from .models import Articles, ArticlesCategories, News
 
 from ckeditor_uploader.widgets import CKEditorUploadingWidget
 
 
-# Методические материалы
+# ----------------------------------------#
+# 1. Категории методических матриалов
+# ----------------------------------------#
 class ArticlesCategoriesForm(forms.ModelForm):
     class Meta:
         model = ArticlesCategories
@@ -20,6 +32,9 @@ class ArticlesCategoriesAdmin(admin.ModelAdmin):
 admin.site.register(ArticlesCategories, ArticlesCategoriesAdmin)
 
 
+# ----------------------------------------#
+# 2. Методические материалы
+# ----------------------------------------#
 class ArticlesAdminForm(forms.ModelForm):
     body = forms.CharField(label='Основной текст', widget=CKEditorUploadingWidget())
 
@@ -41,54 +56,25 @@ class ArticlesAdmin(admin.ModelAdmin):
 admin.site.register(Articles, ArticlesAdmin)
 
 
-# Бальные танцы
-class LessonsBallroomDancingAdminForm(forms.ModelForm):
-    text = forms.CharField(label='Основной текст', widget=CKEditorUploadingWidget())
+# ----------------------------------------#
+# 3. Новости
+# ----------------------------------------#
+class NewsAdminForm(forms.ModelForm):
+    body = forms.CharField(label='Основной текст', widget=CKEditorUploadingWidget())
 
     class Meta:
-        model = LessonsBallroomDancing
+        model = News
         fields = '__all__'
 
 
-class LessonsBallroomDancingAdmin(admin.ModelAdmin):
-    form = LessonsBallroomDancingAdminForm
+class NewsAdmin(admin.ModelAdmin):
+    form = ArticlesAdminForm
+    list_display = ('title', 'slug', 'created', 'updated', 'status')
+    list_filter = ('status', 'updated', 'created')
+    search_fields = ('title', 'body')
+    prepopulated_fields = {'slug': ('title',)}
+    date_hierarchy = 'updated'
+    ordering = ('status', 'updated')
 
 
-# admin.site.register(LessonsBallroomDancing, LessonsBallroomDancingAdmin)
-
-
-# =======================================================================#
-
-# Дошкольники
-class LessonsPreschoolersAdminForm(forms.ModelForm):
-    text = forms.CharField(label='Основной текст', widget=CKEditorUploadingWidget())
-
-    class Meta:
-        model = LessonsPreschoolers
-        fields = '__all__'
-
-
-class LessonsPreschoolersAdmin(admin.ModelAdmin):
-    form = LessonsPreschoolersAdminForm
-
-
-# admin.site.register(LessonsPreschoolers, LessonsPreschoolersAdmin)
-
-
-# =======================================================================#
-
-# Школьники
-class LessonsSchoolStudentsAdminForm(forms.ModelForm):
-    text = forms.CharField(label='Основной текст', widget=CKEditorUploadingWidget())
-
-    class Meta:
-        model = LessonsSchoolStudents
-        fields = '__all__'
-
-
-class LessonsSchoolStudentsAdmin(admin.ModelAdmin):
-    form = LessonsSchoolStudentsAdminForm
-
-# admin.site.register(LessonsSchoolStudents, LessonsSchoolStudentsAdmin)
-
-# =======================================================================#
+admin.site.register(News, NewsAdmin)
