@@ -383,7 +383,9 @@ background-image: url("img/slider/slider1.jpg")
 /*----------------------------------------*/
 /*  9. Одна статья 
 /*----------------------------------------*/
-
+.article-content {
+  max-width: 100%;
+}
 .article-content iframe{
   max-width: 100%;
 }
