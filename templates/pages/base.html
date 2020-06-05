@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 {% load static %}
 <html class="no-js" lang="ru">
+
 <head>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,64 +27,74 @@
 
 <body>
 
-<!-- Modal-Contacts Start -->
-<div class="modal fade" id="modal-contacts" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <!-- заголовок -->
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <h4 class="modal-title">Контакты</h4>
-            </div>
-            <!-- содержимое -->
-            <div class="modal-body">
-                 <div class="row">
+    <!-- Modal-Contacts Start -->
+    <div class="modal fade" id="modal-contacts" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <!-- заголовок -->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title">Контакты</h4>
+                </div>
+                <!-- содержимое -->
+                <div class="modal-body">
+                    <div class="row">
 
-                    <div class="col-md-12 text-center">
+                        <div class="col-md-12 text-center">
 
 
                             <h4>Мы всегда рады ответить на все интересующие Вас вопросы!</h4>
                             <br>
                             <ul>
-                                <li><i class="zmdi zmdi-email mt-10"></i><a href="mailto:parilovamariya@gmail.com"> parilovamariya@gmail.com</a></li>
-                                <li><i class="zmdi zmdi-phone mt-10"></i><a href="tel:+7 (908) 646-04-55"> +7 (908) 646-04-55</a></li>
-                                <a target="_blank" href="https://yandex.ru/maps/-/CCQ95Bdb2D"><li><i class="zmdi zmdi-home mt-10"></i> ул. Лермонтова, 299</li></a>
+                                <li><i class="zmdi zmdi-email mt-10"></i><a href="mailto:parilovamariya@gmail.com">
+                                        parilovamariya@gmail.com</a></li>
+                                <li><i class="zmdi zmdi-phone mt-10"></i><a href="tel:+7 (908) 646-04-55"> +7 (908)
+                                        646-04-55</a></li>
+                                <a target="_blank" href="https://yandex.ru/maps/-/CCQ95Bdb2D">
+                                    <li><i class="zmdi zmdi-home mt-10"></i> ул. Лермонтова, 299</li>
+                                </a>
                             </ul>
 
-                    </div>
+                        </div>
                     </div>
                     <div class="row">
-                    <div class="col-md-12 text-center mt-20">
+                        <div class="col-md-12 text-center mt-20">
 
                             <h5>Мы в соцсетях</h5>
                             <ul>
-                                <li><i class="zmdi zmdi-vk mt-10"></i> <a target="_blank" href="https://vk.com/public187592590">Вконтакте</a></li>
-                                <li><i class="zmdi zmdi-instagram mt-10"></i><a target="_blank" href=" https://www.instagram.com/lets_dance_irk/?igshid=p1g3eel4xp3v"> Instagram</a></li>
-                                <li><i class="zmdi zmdi-youtube mt-10"></i> <a target="_blank" href="https://www.youtube.com/channel/UCOQA-Ft_DLItDwPRW2qYYFA"> YouTube</a></li>
+                                <li><i class="zmdi zmdi-vk mt-10"></i> <a target="_blank"
+                                        href="https://vk.com/public187592590">Вконтакте</a></li>
+                                <li><i class="zmdi zmdi-instagram mt-10"></i><a target="_blank"
+                                        href=" https://www.instagram.com/lets_dance_irk/?igshid=p1g3eel4xp3v">
+                                        Instagram</a></li>
+                                <li><i class="zmdi zmdi-youtube mt-10"></i> <a target="_blank"
+                                        href="https://www.youtube.com/channel/UCOQA-Ft_DLItDwPRW2qYYFA"> YouTube</a>
+                                </li>
                             </ul>
+                            <a class="banner-btn mt-15" href="mailto:parilovamariya@gmail.com" data-text="Напасать нам"><span>Напасать нам</span></a>
+                        </div>
 
 
                     </div>
-                   </div>
 
-                 </div>
+                </div>
 
 
             </div>
             <!-- подвал -->
             <!--<div class="modal-footer">-->
-                <!--<button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>-->
-                <!-- <button type="button" class="btn btn-primary">Сохранить</button>-->
+            <!--<button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>-->
+            <!-- <button type="button" class="btn btn-primary">Сохранить</button>-->
             <!--</div>-->
-         </div>
+        </div>
     </div>
-</div>
-<!-- Modal-Contacts End -->
+    </div>
+    <!-- Modal-Contacts End -->
 
 
-<!-- Header Area Start -->
+    <!-- Header Area Start -->
     <header class="top">
         <div class="header-area ptb-18 header-sticky">
             <div class="container">
@@ -114,8 +125,8 @@
                     <div class="col-md-2 hidden-sm hidden-xs">
                         <div class="header-contact text-right">
                             <a class="banner-btn btn-modal" href="#modal-contacts" data-toggle="modal"
-                           data-text="Контакты"><span>Контакты</span>
-                        </a>
+                                data-text="Контакты"><span>Контакты</span>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -125,10 +136,10 @@
     <!-- Header Area End -->
 
 
-{% block content %}{% endblock content %}
+    {% block content %}{% endblock content %}
 
 
-<!-- Footer Area Start -->
+    <!-- Footer Area Start -->
     <footer class="footer-area">
         <div class="footer-widget-area pt-98 pb-90 fix">
             <div class="container">
@@ -141,9 +152,13 @@
                     <div class="col-md-6 col-sm-6 col-xs-12">
                         <div class="single-footer-widget logo">
                             <ul>
-                                <li><i class="zmdi zmdi-email"></i><a href="mailto:parilovamariya@gmail.com">parilovamariya@gmail.com</a></li>
-                                <li><i class="zmdi zmdi-phone"></i><a href="tel:+7 (908) 646-04-55">+7 (908) 646-04-55</a></li>
-                                <a target="_blank" href="https://yandex.ru/maps/-/CCQ95Bdb2D"><li><i class="zmdi zmdi-home"></i>ул. Лермонтова, 299</li></a>
+                                <li><i class="zmdi zmdi-email"></i><a
+                                        href="mailto:parilovamariya@gmail.com">parilovamariya@gmail.com</a></li>
+                                <li><i class="zmdi zmdi-phone"></i><a href="tel:+7 (908) 646-04-55">+7 (908)
+                                        646-04-55</a></li>
+                                <a target="_blank" href="https://yandex.ru/maps/-/CCQ95Bdb2D">
+                                    <li><i class="zmdi zmdi-home"></i>ул. Лермонтова, 299</li>
+                                </a>
                             </ul>
                         </div>
                     </div>
@@ -164,7 +179,9 @@
                                     <i class="zmdi zmdi-instagram"></i>
                                 </div>
                                 <div class="twitt-content">
-                                    <a target="_blank" href=" https://www.instagram.com/lets_dance_irk/?igshid=p1g3eel4xp3v"> Instagram</a>
+                                    <a target="_blank"
+                                        href=" https://www.instagram.com/lets_dance_irk/?igshid=p1g3eel4xp3v">
+                                        Instagram</a>
                                 </div>
                             </div>
 
@@ -173,7 +190,8 @@
                                     <i class="zmdi zmdi-youtube"></i>
                                 </div>
                                 <div class="twitt-content">
-                                    <a target="_blank" href="https://www.youtube.com/channel/UCOQA-Ft_DLItDwPRW2qYYFA"> YouTube</a>
+                                    <a target="_blank" href="https://www.youtube.com/channel/UCOQA-Ft_DLItDwPRW2qYYFA">
+                                        YouTube</a>
                                 </div>
                             </div>
 
@@ -181,7 +199,7 @@
                     </div>
 
 
-                 </div>
+                </div>
             </div>
         </div>
         <div class="footer-text-area fix bg-coffee ptb-18">
@@ -198,7 +216,7 @@
     </footer>
     <!-- Footer Area End -->
 
-<!-- All js here -->
+    <!-- All js here -->
     <script src="{% static "js/vendor/jquery-1.12.4.min.js" %}"></script>
     <script src="{% static "js/bootstrap.min.js" %}"></script>
     <script src="{% static "js/owl.carousel.min.js" %}"></script>
@@ -216,11 +234,12 @@
 
     {% if sent %}
     <script>
-        $(document).ready(function(){
+        $(document).ready(function () {
             $("#modal-lesson-successfully").modal('show');
         });
     </script>
     {% endif %}
-    
+
 </body>
+
 </html>
