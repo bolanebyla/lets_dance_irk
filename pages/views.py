@@ -87,10 +87,12 @@ def articles(request):
         posts = paginator.page(paginator.num_pages)
 
     categories = ArticlesCategories.objects.all()
+    last_news = News.objects.filter(status='published')[:10]
     data = {
         'posts': posts,
         'categories': categories,
-        'page': page
+        'page': page,
+        'news': last_news
     }
     return render(request, 'pages/articles.html', data)
 

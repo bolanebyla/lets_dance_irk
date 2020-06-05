@@ -451,26 +451,40 @@ ul.pagination li a:hover:not(.active) {background-color: #ddd;}
 /*----------------------------------------*/
 /*  11. Список с боку (side-list)
 /*----------------------------------------*/
-.side-list{
+.side-list h3{
+  color: #7f7f7f;
+}
+
+.side-list a:hover {
+  color: rgb(165, 68, 173);
+}
+.side-list-content{
   box-shadow: 0 0 4px 4px #f4f4f4;
 }
-.side-list ul{
+.side-list-content ul{
   margin: 10px;
 }
-.side-list li{
+.side-list-content li{
   border-bottom: 1px solid #eaeeef;
   padding: 15px 0;
 }
-.side-list a{
+.side-list-content a{
   font-family: "Montserrat", sans-serif;
   font-size: 15px;
   color: #757575;
   font-weight: 500;
   margin-bottom: 12px;
+  -webkit-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
 }
-.side-list h6{
+
+
+.side-list-content h6{
   font-family: "Lato", sans-serif;
   font-size: 14px;
   color: #aaaaaa;
   font-weight: 400;
 }
+
+
