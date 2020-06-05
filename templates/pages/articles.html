@@ -81,19 +81,20 @@
                         <li class="list-group-item"><a href="/articles/{{category.slug}}">{{category.category}}</a></li>
                         {% endfor %}
                     </ul>
-
-                    <h3>Новости</h3>
-                    <div class="mt-10"></div>
                     <div class="side-list">
-                        <ul class=" list-group mt-10">
-                            {% for news_item in news %}
-                            <li>
-                                <a href="/articles/item/{{news_item.slug}}">{{ news_item.title }}</a>
+                        <a href="/news"><h3>Новости</h3></a>
+                        <div class="mt-10"></div>
+                        <div class="side-list-content">
+                            <ul class=" list-group mt-10">
+                                {% for news_item in news %}
+                                <li>
+                                    <a href="/news/item/{{news_item.slug}}">{{ news_item.title }}</a>
 
-                                <h6>{{ news_item.created }} </h6>
-                            </li>
-                            {% endfor %}
-                        </ul>
+                                    <h6>{{ news_item.created }} </h6>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
