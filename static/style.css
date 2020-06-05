@@ -260,6 +260,13 @@ background-image: url("img/slider/slider1.jpg")
 .blog-content a:hover {
   color: rgb(165, 68, 173);
 }
+.row-flex {
+  display: flex;
+  flex-flow: row wrap;
+}
+[class*="col-"] {
+  margin-bottom: 30px;
+}
 /*----------------------------------------*/
 /*  6. Наши выступления
 /*----------------------------------------*/

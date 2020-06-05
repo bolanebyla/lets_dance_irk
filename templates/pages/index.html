@@ -28,7 +28,7 @@
                     {% csrf_token %}
                     <div class="row">
                         <div class="col-xs-12 text-center">
-                            <button type="submit" class="banner-btn" 
+                            <button type="submit" class="banner-btn"
                                 data-text="Записаться"><span>Записаться</span></button>
                         </div>
                     </div>
@@ -270,9 +270,27 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+
+        <div class="row row-flex">
+            {% for news_item in news %}
             <div class="col-md-6 col-sm-12 col-xs-12">
-                <div class="single-blog">
+                <div class="articles-content" style="height: 100%;">
+                    <div class="single-blog">
+
+                        <div class="blog-content" style="width: 100%">
+                            <h3>{{ news_item.title }}</h3>
+                            <h6>{{ news_item.created }} </h6>
+
+
+                            <p>{{ news_item.description }}</p>
+                            <a href="/news/item/{{news_item.slug}}">Читать</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+            <!-- <div class="single-blog">
                     <div class="blog-pic single-img">
                         <img src="{% static "img/blog/blog1.jpg" %}" alt="blog">
                     </div>
@@ -297,8 +315,8 @@
                             euismod ut ac orci.</p>
                         <a href="blog.html">Подробнее</a>
                     </div>
-                </div>
-            </div>
+                </div> -->
+
         </div>
     </div>
 </section>

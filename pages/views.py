@@ -45,7 +45,12 @@ def index(request):
 
     else:
         form = ModalLesson()
-    return render(request, 'pages/index.html', {'form': form})
+    last_news = News.objects.filter(status='published')[:2]
+    data = {
+        'form': form,
+        'news': last_news
+    }
+    return render(request, 'pages/index.html', data)
 
 
 # ----------------------------------------#
