@@ -35,7 +35,7 @@
                                 <div class="blog-content">
 
                                     <h3>{{ news_item.title }}</h3>
-                                    <h6>{{ news_item.updated }} </h6>
+                                    <h6>{{ news_item.created }} </h6>
                                     <p>{{ news_item.description }}</p>
                                     <a href="/news/item/{{news_item.slug}}">Читать</a>
                                 </div>
@@ -66,111 +66,6 @@
             </div>
         </div>
     </div>
-
-
-
-
-
-
-
-    <!-- <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-xs-12">
-                <div class="section-title text-center">
-                    <h2>Новости</h2>
-                    <p>Жизнь нашего коллектива </p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6 col-sm-12 col-xs-12">
-                <div class="single-blog">
-                    <div class="blog-pic single-img">
-                        <img src="{% static "img/blog/blog1.jpg" %}" alt="blog">
-                    </div>
-                    <div class="blog-content">
-                        <h3>Название мероприятия</h3>
-                        <h6>29 Мая 2020</h6>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut nisl non justo aliquam
-                            euismod ut ac orci.</p>
-                        <a href="/news/item/1">Подробнее</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-sm-12 col-xs-12">
-                <div class="single-blog">
-                    <div class="blog-pic single-img">
-                        <img src="{% static "img/blog/blog1.jpg" %}" alt="blog">
-                    </div>
-                    <div class="blog-content">
-                        <h3>Название мероприятия</h3>
-                        <h6>29 Мая 2020</h6>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut nisl non justo aliquam
-                            euismod ut ac orci.</p>
-                        <a href="blog.html">Подробнее</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-sm-12 col-xs-12">
-                <div class="single-blog">
-                    <div class="blog-pic single-img">
-                        <img src="{% static "img/blog/blog1.jpg" %}" alt="blog">
-                    </div>
-                    <div class="blog-content">
-                        <h3>Название мероприятия</h3>
-                        <h6>29 Мая 2020</h6>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut nisl non justo aliquam
-                            euismod ut ac orci.</p>
-                        <a href="blog.html">Подробнее</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-sm-12 col-xs-12">
-                <div class="single-blog">
-                    <div class="blog-pic single-img">
-                        <img src="{% static "img/blog/blog1.jpg" %}" alt="blog">
-                    </div>
-                    <div class="blog-content">
-                        <h3>Название мероприятия</h3>
-                        <h6>29 Мая 2020</h6>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut nisl non justo aliquam
-                            euismod ut ac orci.</p>
-                        <a href="blog.html">Подробнее</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-sm-12 col-xs-12">
-                <div class="single-blog">
-                    <div class="blog-pic single-img">
-                        <img src="{% static "img/blog/blog1.jpg" %}" alt="blog">
-                    </div>
-                    <div class="blog-content">
-                        <h3>Название мероприятия</h3>
-                        <h6>29 Мая 2020</h6>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut nisl non justo aliquam
-                            euismod ut ac orci.</p>
-                        <a href="blog.html">Подробнее</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-sm-12 col-xs-12">
-                <div class="single-blog">
-                    <div class="blog-pic single-img">
-                        <img src="{% static "img/blog/blog1.jpg" %}" alt="blog">
-                    </div>
-                    <div class="blog-content">
-                        <h3>Название мероприятия</h3>
-                        <h6>29 Мая 2020</h6>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut nisl non justo aliquam
-                            euismod ut ac orci.</p>
-                        <a href="blog.html">Подробнее</a>
-                    </div>
-                </div>
-            </div>
-        </div> -->
     <!-- pagination Start -->
     {% include "pages/pagination.html" with page=posts %}
     <!-- pagination End -->

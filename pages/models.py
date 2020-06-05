@@ -76,7 +76,7 @@ class News(models.Model):
     status = models.CharField('Статус', max_length=15, choices=STATUS_CHOICES, default='draft')
 
     class Meta:
-        ordering = ('-updated',)
+        ordering = ('-created',)
         verbose_name = 'новости'
         verbose_name_plural = 'Новости'
 
