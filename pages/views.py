@@ -92,7 +92,7 @@ def articles(request):
         'posts': posts,
         'categories': categories,
         'page': page,
-        'news': last_news
+        'last_news': last_news
     }
     return render(request, 'pages/articles.html', data)
 
@@ -103,9 +103,13 @@ def articles(request):
 def item_articles(request, slug):
     post = Articles.objects.filter(slug=slug)
     categories = ArticlesCategories.objects.all()
+    last_news = News.objects.filter(status='published')[:10]
+    last_articles = Articles.objects.filter(status='published')[:10]
     data = {
         'post': post[0],
-        'categories': categories
+        'categories': categories,
+        'last_news': last_news,
+        'last_posts': last_articles
     }
     return render(request, 'pages/item_articles.html', data)
 
@@ -130,7 +134,7 @@ def news(request):
     data = {
         'news': news_list,
         'page': page,
-        'posts': last_articles
+        'last_posts': last_articles
     }
     return render(request, 'pages/news.html', data)
 
@@ -140,8 +144,11 @@ def news(request):
 # ----------------------------------------#
 def item_news(request, slug):
     news_item = News.objects.filter(slug=slug)
-
+    last_articles = Articles.objects.filter(status='published')[:10]
+    last_news = News.objects.filter(status='published')[:10]
     data = {
-        'news': news_item[0]
+        'news': news_item[0],
+        'last_posts': last_articles,
+        'last_news': last_news
     }
     return render(request, 'pages/item_news.html', data)

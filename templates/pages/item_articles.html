@@ -46,7 +46,7 @@
                     {{ post.body|safe }}
                 </div>
             </div>
-
+            <!-- Боковое меню Start -->
             <div class="col-md-4 col-sm-12 col-xs-12 articles-categories">
                 <div class="hidden-sm hidden-xs">
                     <h3>Категории</h3>
@@ -57,12 +57,15 @@
                         </li>
                         {% endfor %}
                     </ul>
+                    {% include "pages/last_articles.html" %}
+                    {% include "pages/last_news.html" %}
                 </div>
             </div>
+            <!-- Боковое меню End-->
         </div>
 
     </div>
 </section>
 
 <section class="bg-gray">
-{% endblock content %}
+    {% endblock content %}

@@ -16,19 +16,35 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="news-content">
-                    <h3>Название новости</h3>
-                    <h6>01.06.2020</h6>
-                    <img src="" alt="Фотография, если есть">
-                    <p>Содержимое новости</p>
+            <div class="col-md-8 col-sm-12 col-xs-12">
+                <div class="article-content">
+                    <h3>{{news.title}}</h3>
+                    <h6>
+                        {{news.created}}
+                        {% if news.created != news.updated %}
+                        (изменено {{ news.updated }})
+                        {% endif %}
+                    </h6>
+                    <img class="pb-20" src="{{ news.cover.url }}" alt="">
+                    {{ news.body|safe }}
+                    <h4>Фотографии с мероприятия (если есть)</h4>
+                    <img src="" alt="Несколько фотографий">
+                    <br>
+                    <a href="">Смотерть весь альбом</a>
                 </div>
-
             </div>
+            <!-- Боковое меню Start -->
+            <div class="col-md-4 col-sm-12 col-xs-12 side-list">
+                <div class="hidden-sm hidden-xs">
+                    {% include "pages/last_news.html" %}
+                    {% include "pages/last_articles.html" %}
+                </div>
+            </div>
+            <!-- Боковое меню End-->
         </div>
 
     </div>
 </section>
 
 <section class="bg-gray">
-{% endblock content %}
+    {% endblock content %}

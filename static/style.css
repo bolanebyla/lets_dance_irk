@@ -213,8 +213,6 @@ background-image: url("img/slider/slider1.jpg")
     padding-bottom: 20px;
 }
 /*----------------------------------------*/
-
-
 /*  5. Новости 
 /*----------------------------------------*/
 .blog-pic {
@@ -342,6 +340,7 @@ background-image: url("img/slider/slider1.jpg")
 .articles-categories a:hover {
   color: rgb(165, 68, 173);
 }
+/*----------------------------------------*/
 /*  8. Одна новость
 /*----------------------------------------*/
 
@@ -449,7 +448,7 @@ ul.pagination li a.active {
 
 ul.pagination li a:hover:not(.active) {background-color: #ddd;}
 /*----------------------------------------*/
-/*  11. Список с боку (side-list)
+/*  11. Боковое меню (side-list)
 /*----------------------------------------*/
 .side-list h3{
   color: #7f7f7f;

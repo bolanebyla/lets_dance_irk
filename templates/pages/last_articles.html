@@ -1,0 +1,14 @@
+<a href="/articles">
+    <h3>Последние публикации</h3>
+</a>
+<div class="mt-10"></div>
+<div class="side-list-content">
+    <ul class=" list-group mt-10">
+        {% for post in last_posts %}
+        <li>
+            <a href="/articles/item/{{post.slug}}">{{ post.title }}</a>
+            <h6>{{ post.updated }} </h6>
+        </li>
+        {% endfor %}
+    </ul>
+</div>

@@ -71,7 +71,7 @@
 
                 </div>
             </div>
-
+            <!-- Боковое меню Start -->
             <div class="col-md-4 col-sm-12 col-xs-12 articles-categories">
                 <div class="hidden-sm hidden-xs">
                     <h3>Категории</h3>
@@ -81,23 +81,12 @@
                         <li class="list-group-item"><a href="/articles/{{category.slug}}">{{category.category}}</a></li>
                         {% endfor %}
                     </ul>
-                    <div class="side-list">
-                        <a href="/news"><h3>Новости</h3></a>
-                        <div class="mt-10"></div>
-                        <div class="side-list-content">
-                            <ul class=" list-group mt-10">
-                                {% for news_item in news %}
-                                <li>
-                                    <a href="/news/item/{{news_item.slug}}">{{ news_item.title }}</a>
-
-                                    <h6>{{ news_item.created }} </h6>
-                                </li>
-                                {% endfor %}
-                            </ul>
-                        </div>
-                    </div>
+                    <!-- Последние новости Start -->
+                    {% include "pages/last_news.html" %}
+                    <!-- Последние новости End-->
                 </div>
             </div>
+            <!-- Боковое меню End-->
 
 
         </div>
