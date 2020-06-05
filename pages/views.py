@@ -124,7 +124,7 @@ def news(request):
         # If page is out of range deliver last page of results
         news_list = paginator.page(paginator.num_pages)
 
-    last_articles = Articles.objects.filter(status='published')[:2]
+    last_articles = Articles.objects.filter(status='published')[:10]
     data = {
         'news': news_list,
         'page': page,

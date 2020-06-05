@@ -12,6 +12,7 @@
     8. Одна новость
     9. Одна статья 
     10. Pagination
+    11. Список с боку (side-list)
     
 #5FC7AE
 -----------------------------------------------------------------------------------*/
@@ -447,3 +448,29 @@ ul.pagination li a.active {
 }
 
 ul.pagination li a:hover:not(.active) {background-color: #ddd;}
+/*----------------------------------------*/
+/*  11. Список с боку (side-list)
+/*----------------------------------------*/
+.side-list{
+  box-shadow: 0 0 4px 4px #f4f4f4;
+}
+.side-list ul{
+  margin: 10px;
+}
+.side-list li{
+  border-bottom: 1px solid #eaeeef;
+  padding: 15px 0;
+}
+.side-list a{
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  color: #757575;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+.side-list h6{
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  color: #aaaaaa;
+  font-weight: 400;
+}

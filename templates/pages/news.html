@@ -45,28 +45,27 @@
                     </div>
                 </div>
             </div>
-            
+
 
             <div class="col-md-4 col-sm-12 col-xs-12 articles-categories">
                 <div class="hidden-sm hidden-xs">
                     <h3>Последние публикации</h3>
                     <div class="mt-10"></div>
-                    <!-- {% for post in posts %}
+                    <div class="side-list">
+                        <ul class=" list-group mt-10">
+                            {% for post in posts %}
+                            <li>
+                                <a href="/articles/item/{{post.slug}}">{{ post.title }}</a>
 
-                    <div class="articles-content">
-                        <div class="single-blog">
-                            <div class="blog-content">
-
-                                <h3>{{ post.title }}</h3>
                                 <h6>{{ post.updated }} </h6>
-                                <a href="/articles/item/{{post.slug}}">Читать</a>
-                            </div>
-                        </div>
+                            </li>
+                            {% endfor %}
+                        </ul>
                     </div>
-                    {% endfor %} -->
                 </div>
             </div>
         </div>
+    </div>
 
 
 
@@ -74,7 +73,7 @@
 
 
 
-        <!-- <div class="row">
+    <!-- <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-xs-12">
                 <div class="section-title text-center">
                     <h2>Новости</h2>
@@ -172,9 +171,9 @@
                 </div>
             </div>
         </div> -->
-        <!-- pagination Start -->
-        {% include "pages/pagination.html" with page=posts %}
-        <!-- pagination End -->
+    <!-- pagination Start -->
+    {% include "pages/pagination.html" with page=posts %}
+    <!-- pagination End -->
     </div>
 </section>
 <!-- Новости (Blog) End -->
