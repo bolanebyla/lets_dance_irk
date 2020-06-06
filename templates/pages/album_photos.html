@@ -1,0 +1,61 @@
+{% extends "pages/base.html" %}
+{% load static %}
+
+{% block title %}Галерея - Танцуй{% endblock title %}
+
+{% block content %}
+
+<section class="blog-area pt-95 pb-100 ">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-xs-12">
+                <div class="section-title text-center">
+                    <h2>Галерея</h2>
+                    <p>Наши выступления и мероприятия</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-sm-12 col-xs-12">
+                <div class="article-content">
+                    <h3>{{ album.title }}</h3>
+                    <h6>{{ album.created }}</h6>
+                    {% for img in photo %}
+                    <div class="col-md-3 col-sm-4 col-xs-6 album">
+                        <a data-fancybox="gallery" href="{{ img.big_img.url }}">
+                            <div class="img-responsive album-photo"
+                                style="background-image: url({{ img.small_img.url }}); background-size: cover; width: 185px; height: 127px; background-position: center">
+                            </div>
+                        </a>
+                    </div>
+                    {% endfor %}
+
+
+
+                </div>
+            </div>
+            <!-- Боковое меню Start -->
+            <div class="col-md-4 col-sm-12 col-xs-12 side-list">
+                <div class="hidden-sm hidden-xs">
+                    {% include "pages/last_news.html" %}
+                    {% include "pages/last_articles.html" %}
+                </div>
+            </div>
+            <!-- Боковое меню End-->
+        </div>
+
+
+
+
+
+
+    </div>
+</section>
+
+
+
+<section class="bg-gray">
+    {% endblock content %}

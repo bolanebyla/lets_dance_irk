@@ -9,16 +9,23 @@
 # 5. Одна статья
 # 6. Новости
 # 7. Одна новость
+# 8. Галерея
+# 9. Фотографии одного альбома галереи + Парсер фото из Вк
 #
 # -----------------------------------------------------------------------------------#
+
+import requests
+import json
 
 from django.shortcuts import render, HttpResponse, get_object_or_404, HttpResponseRedirect
 from django.http import HttpResponseNotFound
 from django.core.mail import send_mail
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from .models import Articles, ArticlesCategories, News
+from .models import Articles, ArticlesCategories, News, Gallery
 from .forms import ModalLesson
 from lets_dance_irk.email_config import EMAIL_TO_SEND
+
+from . import vk_config
 
 
 # ----------------------------------------#
@@ -45,10 +52,12 @@ def index(request):
 
     else:
         form = ModalLesson()
-    last_news = News.objects.filter(status='published')[:2]
+    last_news = News.objects.filter(status='published')[:2] # Последние две новости
+    albums = Gallery.objects.filter(status='published')[:3] # Последние три альбома
     data = {
         'form': form,
-        'news': last_news
+        'news': last_news,
+        'albums': albums
     }
     return render(request, 'pages/index.html', data)
 
@@ -157,3 +166,61 @@ def item_news(request, slug):
         'last_news': last_news
     }
     return render(request, 'pages/item_news.html', data)
+
+
+# ----------------------------------------#
+# 8. Галерея
+# ----------------------------------------#
+
+def gallery(request):
+    albums = Gallery.objects.filter(status='published')
+    last_articles = Articles.objects.filter(status='published')[:10]
+    last_news = News.objects.filter(status='published')[:10]
+
+    data = {
+        'albums': albums,
+        'last_posts': last_articles,
+        'last_news': last_news
+    }
+    return render(request, 'pages/gallery.html', data)
+
+
+# ----------------------------------------#
+# 9. Фотографии одного альбома галереи
+# ----------------------------------------#
+def get_photo_from_vk(url):  # Парсер фотографий из альбома Вк
+    url = url.split('_')
+    owner_id = '-' + ''.join(x for x in url[0] if x.isdigit())
+    album_id = url[1]
+    access_token = vk_config.ACCESS_TOKEN
+    version = vk_config.VERSION
+    response = requests.get(
+        f'https://api.vk.com/method/photos.get?owner_id={owner_id}&album_id={album_id}&access_token={access_token}&v={version}')
+    items = json.loads(response.content)['response']['items']
+    photo = []
+    for item in items:
+        small_img = item['sizes'][2]
+        big_img = item['sizes'][-1]
+        photo.append(
+            {
+                'small_img': small_img,
+                'big_img': big_img
+            }
+        )
+    return photo
+
+
+def album_photos(request, id):
+    album = Gallery.objects.filter(id=id)[0]
+    url = album.url
+    photo = get_photo_from_vk(url)
+    last_articles = Articles.objects.filter(status='published')[:10]
+    last_news = News.objects.filter(status='published')[:10]
+    data = {
+        'photo': photo,
+        'last_posts': last_articles,
+        'last_news': last_news,
+        'album': album
+
+    }
+    return render(request, 'pages/album_photos.html', data)
