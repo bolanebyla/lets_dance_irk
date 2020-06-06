@@ -10,7 +10,7 @@
 
 from django import forms
 from django.contrib import admin
-from .models import Articles, ArticlesCategories, News
+from .models import Articles, ArticlesCategories, News, Gallery
 
 from ckeditor_uploader.widgets import CKEditorUploadingWidget
 
@@ -78,3 +78,10 @@ class NewsAdmin(admin.ModelAdmin):
 
 
 admin.site.register(News, NewsAdmin)
+
+
+# ----------------------------------------#
+# 4. Галерея
+# ----------------------------------------#
+
+admin.site.register(Gallery)

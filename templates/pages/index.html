@@ -312,77 +312,27 @@
         </div>
         <div class="row">
             <div class="grid" style="position: relative; height: 390px;">
-                <div class="col-md-4 col-sm-4 col-xs-12 grid-item cat1 cat3"
-                    style="position: absolute; left: 0%; top: 0px;">
-                    <a href="">
-                        <div class="portfolio-img single-img">
-                            <img src="{% static "img/portfolio/gal.jpg" %}" alt="project">
-                        </div>
-                        <div class="gallery-icon">
-                            <h3>Название альбома</h3>
-                        </div>
-                    </a>
-                </div>
 
-                <div class="col-md-4 col-sm-4 col-xs-12 grid-item cat1 cat3"
+                {% for album in albums %}
+                <div class="col-md-4 col-sm-12 col-xs-12 text-center grid-item cat1 cat3"
                     style="position: absolute; left: 0%; top: 0px;">
-                    <a href="">
-                        <div class="portfolio-img single-img">
-                            <img src="{% static "img/portfolio/gal.jpg" %}" alt="project">
+                    <a href="gallery/album/{{album.id}}">
+                        <div class="portfolio-img single-img">                            
+                            <div
+                                style="background-image: url({{album.cover.url}}); background-size: cover; width: 370px; height: 320px; background-position: center">
+                            </div>
+                            <p class="portfolio-title ">{{ album.title }}</p>
                         </div>
                         <div class="gallery-icon">
-                            <h3>Название альбома</h3>
+                            <h4>Смотерть весь альбом</h4>
                         </div>
                     </a>
                 </div>
+                {% endfor %}
 
-                <div class="col-md-4 col-sm-4 col-xs-12 grid-item cat1 cat3"
-                    style="position: absolute; left: 0%; top: 0px;">
-                    <a href="">
-                        <div class="portfolio-img single-img">
-                            <img src="{% static "img/portfolio/gal.jpg" %}" alt="project">
-                        </div>
-                        <div class="gallery-icon">
-                            <h3>Название альбома</h3>
-                        </div>
-                    </a>
-                </div>
+                
 
-                <div class="col-md-4 col-sm-4 col-xs-12 grid-item cat1 cat3"
-                    style="position: absolute; left: 0%; top: 0px;">
-                    <a href="">
-                        <div class="portfolio-img single-img">
-                            <img src="{% static "img/portfolio/gal.jpg" %}" alt="project">
-                        </div>
-                        <div class="gallery-icon">
-                            <h3>Название альбома</h3>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-md-4 col-sm-4 col-xs-12 grid-item cat1 cat3"
-                    style="position: absolute; left: 0%; top: 0px;">
-                    <a href="">
-                        <div class="portfolio-img single-img">
-                            <img src="{% static "img/portfolio/gal.jpg" %}" alt="project">
-                        </div>
-                        <div class="gallery-icon">
-                            <h3>Название альбома</h3>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-md-4 col-sm-4 col-xs-12 grid-item cat1 cat3"
-                    style="position: absolute; left: 0%; top: 0px;">
-                    <a href="">
-                        <div class="portfolio-img single-img">
-                            <img src="{% static "img/portfolio/gal.jpg" %}" alt="project">
-                        </div>
-                        <div class="gallery-icon">
-                            <h3>Название альбома</h3>
-                        </div>
-                    </a>
-                </div>
+               
 
             </div>
         </div>

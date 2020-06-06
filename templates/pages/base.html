@@ -21,7 +21,9 @@
     <link rel="stylesheet" href="{% static "css/slick.css" %}">
     <link rel="stylesheet" href="{% static "style.css" %}">
     <link rel="stylesheet" href="{% static "css/responsive.css" %}">
+    <link rel="stylesheet" href="{% static "css/jquery.fancybox.min.css" %}">
     <script src="{% static "js/vendor/modernizr-2.8.3.min.js" %}"></script>
+
 
 </head>
 
@@ -73,7 +75,8 @@
                                         href="https://www.youtube.com/channel/UCOQA-Ft_DLItDwPRW2qYYFA"> YouTube</a>
                                 </li>
                             </ul>
-                            <a class="banner-btn mt-15" href="mailto:parilovamariya@gmail.com" data-text="Напасать нам"><span>Напасать нам</span></a>
+                            <a class="banner-btn mt-15" href="mailto:parilovamariya@gmail.com"
+                                data-text="Напасать нам"><span>Напасать нам</span></a>
                         </div>
 
 
@@ -113,7 +116,7 @@
                                         <li><a href="/#">Главная</a></li>
                                         <li><a href="/news">Новости</a></li>
                                         <li><a href="/#schedule">Расписание</a></li>
-                                        <li><a href="">Галерея</a></li>
+                                        <li><a href="/gallery">Галерея</a></li>
                                         <li><a href="/articles">Методические материалы</a></li>
                                     </ul>
                                 </nav>
@@ -228,9 +231,10 @@
     <script src="{% static "js/isotope.pkgd.min.js" %}"></script>
     <script src="{% static "js/jquery.magnific-popup.js" %}"></script>
     <script src="{% static "js/plugins.js" %}"></script>
+    <script src="{% static "js/jquery.fancybox.min.js" %}"></script>
 
+    <script src=" {% static "js/main.js" %}"></script>
 
-    <script src="{% static "js/main.js" %}"></script>
 
     {% if sent %}
     <script>

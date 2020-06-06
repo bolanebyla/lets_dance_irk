@@ -5,6 +5,7 @@
 # 1. Категории методических матриалов
 # 2. Методические материалы
 # 3. Новости
+# 4. Галерея
 #
 # -----------------------------------------------------------------------------------#
 
@@ -79,6 +80,29 @@ class News(models.Model):
         ordering = ('-created',)
         verbose_name = 'новости'
         verbose_name_plural = 'Новости'
+
+    def __str__(self):
+        return self.title
+
+
+# ----------------------------------------#
+# 4. Галерея
+# ----------------------------------------#
+class Gallery(models.Model):
+    STATUS_CHOICES = (
+        ('draft', 'Скрыто'),
+        ('published', 'Опубликовано'),
+    )
+    title = models.CharField('Название', max_length=250)
+    url = models.CharField('Ссылка на альбом из Вк', unique=True, max_length=250)
+    cover = models.ImageField('Обложка', upload_to='images/gallery')
+    created = models.DateTimeField('Дата создания', auto_now_add=True)
+    status = models.CharField('Статус', max_length=15, choices=STATUS_CHOICES, default='draft')
+
+    class Meta:
+        ordering = ('-created',)
+        verbose_name = 'альбом галереи'
+        verbose_name_plural = 'Альбомы галереии'
 
     def __str__(self):
         return self.title

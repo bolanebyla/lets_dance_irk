@@ -8,6 +8,8 @@ urlpatterns = [
     path('news/item/<str:slug>', views.item_news),
     path('news', views.news),
     path('articles', views.articles),
+    path('gallery/album/<str:id>', views.album_photos),
+    path('gallery', views.gallery),
     path('successful_entry', views.successful_entry),
     path('', views.index, name='home'),
 ]
