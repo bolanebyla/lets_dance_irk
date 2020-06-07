@@ -52,8 +52,8 @@ def index(request):
 
     else:
         form = ModalLesson()
-    last_news = News.objects.filter(status='published')[:2] # Последние две новости
-    albums = Gallery.objects.filter(status='published')[:3] # Последние три альбома
+    last_news = News.objects.filter(status='published')[:2]  # Последние две новости
+    albums = Gallery.objects.filter(status='published')[:3]  # Последние три альбома
     data = {
         'form': form,
         'news': last_news,
@@ -173,12 +173,24 @@ def item_news(request, slug):
 # ----------------------------------------#
 
 def gallery(request):
-    albums = Gallery.objects.filter(status='published')
+    object_list = Gallery.objects.filter(status='published')
+    paginator = Paginator(object_list, 30)  # 30 albums in each page
+    page = request.GET.get('page')
+    try:
+        albums = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer deliver the first page
+        albums = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range deliver last page of results
+        albums = paginator.page(paginator.num_pages)
+
     last_articles = Articles.objects.filter(status='published')[:10]
     last_news = News.objects.filter(status='published')[:10]
 
     data = {
         'albums': albums,
+        'page': page,
         'last_posts': last_articles,
         'last_news': last_news
     }
