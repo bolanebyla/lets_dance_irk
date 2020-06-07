@@ -307,11 +307,10 @@
 /*----------------------------------------*/
 /*  9. Одна статья 
 /*----------------------------------------*/
-.article-content {
-  min-height: 100%;
-}
+
 .article-content img {
   max-width: 100%;
+  height: auto !important; 
 }
 .article-content iframe {
   max-width: 100%;
