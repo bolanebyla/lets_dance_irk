@@ -290,7 +290,7 @@
             </div>
             {% endfor %}
 
-            
+
 
         </div>
     </div>
@@ -311,30 +311,29 @@
             </div>
         </div>
         <div class="row">
-            <div class="grid" style="position: relative; height: 390px;">
-
+            <!-- <div class="grid" style="position: relative; height: 390px;"> -->
+            
                 {% for album in albums %}
-                <div class="col-md-4 col-sm-12 col-xs-12 text-center grid-item cat1 cat3"
-                    style="position: absolute; left: 0%; top: 0px;">
+                <div class="col-md-4 col-sm-4 col-xs-12 text-center">
                     <a href="gallery/album/{{album.id}}">
-                        <div class="portfolio-img single-img">                            
+                        <!-- <div class="portfolio-img single-img">                             -->
+                        <div class="album-cover">
                             <div
-                                style="background-image: url({{album.cover.url}}); background-size: cover; width: 370px; height: 320px; min-width: 100%; background-position: center">
+                                style="background-image: url({{album.cover.url}}); background-size: cover;  height: 320px; min-width: 100%; background-position: center">
                             </div>
                             <p class="portfolio-title ">{{ album.title }}</p>
                         </div>
-                        <div class="gallery-icon">
-                            <h4>Смотерть весь альбом</h4>
-                        </div>
+                        <!-- </div> -->
                     </a>
                 </div>
                 {% endfor %}
+            
 
-                
 
-               
 
-            </div>
+
+
+            <!-- </div> -->
         </div>
     </div>
 </section>

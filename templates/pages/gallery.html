@@ -23,28 +23,22 @@
                     <div class="col-md-12 col-sm-12 col-xs-12 ">
                         <h3>Альбомы</h3>
                         <div class="mt-10"></div>
-                        <div class="grid" style="position: relative; height: 390px;">
-                            {% for album in albums %}
-                            <div class="col-lg-4 col-md-3 col-sm-4 col-xs-12 text-center grid-item cat1 cat3"
-                                style="position: absolute; left: 0%; top: 0px;">
-                                <a href="gallery/album/{{album.id}}">
-                                    <div class="portfolio-img single-img">                                       
-                                        <div
-                                            style="background-image: url({{album.cover.url}}); background-size: cover; width: 226px; height: 195.46px; min-width: 100%; background-position: center">
-                                        </div>
-                                        <p class="portfolio-title ">{{ album.title }}</p>
-                                    </div>
-                                    <div class="gallery-icon">
-                                        <h4>Смотерть</h4>
-                                    </div>
-                                </a>
-                            </div>
-                            {% endfor %}
+                        {% for album in albums %}
+                        <div class="col-lg-4 col-md-3 col-sm-4 col-xs-12 text-center">
+                            <a href="gallery/album/{{album.id}}">
 
+                                <div class="album-cover"
+                                    style="background-image: url({{album.cover.url}}); background-size: cover;  height: 195.46px; min-width: 100%; background-position: center">
+                                </div>
+                                <p class="portfolio-title ">{{ album.title }}</p>
+
+                            </a>
                         </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
+
 
             <!-- Боковое меню Start -->
             <div class="col-md-4 col-sm-12 col-xs-12 side-list">
