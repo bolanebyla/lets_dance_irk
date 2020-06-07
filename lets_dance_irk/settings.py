@@ -26,6 +26,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -38,6 +40,7 @@ INSTALLED_APPS = [
 
     'ckeditor',
     'ckeditor_uploader',
+    'django_summernote',
     'django_forms_bootstrap',
     'pages',
 ]
@@ -136,6 +139,13 @@ STATICFILES_DIRS = [
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# Summernote config
+SUMMERNOTE_CONFIG = {
+    'summernote': {
+        'lang': 'ru-RU',
+    }
+}
 
 CKEDITOR_UPLOAD_PATH = "uploads/"
 

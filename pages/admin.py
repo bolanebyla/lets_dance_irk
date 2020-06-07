@@ -12,7 +12,7 @@ from django import forms
 from django.contrib import admin
 from .models import Articles, ArticlesCategories, News, Gallery
 
-from ckeditor_uploader.widgets import CKEditorUploadingWidget
+from django_summernote.widgets import SummernoteWidget
 
 
 # ----------------------------------------#
@@ -36,7 +36,8 @@ admin.site.register(ArticlesCategories, ArticlesCategoriesAdmin)
 # 2. Методические материалы
 # ----------------------------------------#
 class ArticlesAdminForm(forms.ModelForm):
-    body = forms.CharField(label='Основной текст', widget=CKEditorUploadingWidget())
+    body = forms.CharField(label='Основной текст', widget=SummernoteWidget())
+
 
     class Meta:
         model = Articles
@@ -60,7 +61,7 @@ admin.site.register(Articles, ArticlesAdmin)
 # 3. Новости
 # ----------------------------------------#
 class NewsAdminForm(forms.ModelForm):
-    body = forms.CharField(label='Основной текст', widget=CKEditorUploadingWidget())
+    body = forms.CharField(label='Основной текст', widget=SummernoteWidget())
 
     class Meta:
         model = News
