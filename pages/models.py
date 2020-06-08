@@ -40,7 +40,7 @@ class Articles(models.Model):
         ('published', 'Опубликовано'),
     )
     title = models.CharField('Название', max_length=250)
-    category = models.ForeignKey(ArticlesCategories, on_delete=models.DO_NOTHING)
+    category = models.ForeignKey(ArticlesCategories, on_delete=models.DO_NOTHING, verbose_name=u'Категория')
     slug = models.SlugField('Ссылка', max_length=250, unique=True)
     cover = models.ImageField('Превью', upload_to='images/')
     author = models.CharField('Автор', max_length=250)
@@ -96,7 +96,8 @@ class News(models.Model):
     cover = models.ImageField('Превью', upload_to='images/')
     description = models.TextField('Описание')
     body = models.TextField('Основной текст')
-    album = models.ForeignKey(Gallery, on_delete=models.DO_NOTHING, blank=True, null=True, verbose_name=u"Альбом (не обязательно)")
+    album = models.ForeignKey(Gallery, on_delete=models.DO_NOTHING, blank=True, null=True,
+                              verbose_name=u'Альбом (не обязательно)')
     created = models.DateTimeField('Дата создания', auto_now_add=True)
     updated = models.DateTimeField('Дата последнего редактирования', auto_now=True)
     status = models.CharField('Статус', max_length=15, choices=STATUS_CHOICES, default='draft')
