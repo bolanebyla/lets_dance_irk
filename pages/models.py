@@ -1,11 +1,12 @@
+# -*- coding: utf-8 -*-
 # -----------------------------------------------------------------------------------#
 #
 # pages/models.py
 # ===================
 # 1. Категории методических матриалов
 # 2. Методические материалы
-# 3. Новости
-# 4. Галерея
+# 3. Галерея
+# 4. Новости
 #
 # -----------------------------------------------------------------------------------#
 
@@ -60,33 +61,7 @@ class Articles(models.Model):
 
 
 # ----------------------------------------#
-# 3. Новости
-# ----------------------------------------#
-class News(models.Model):
-    STATUS_CHOICES = (
-        ('draft', 'Черновик'),
-        ('published', 'Опубликовано'),
-    )
-    title = models.CharField('Название', max_length=250)
-    slug = models.SlugField('Ссылка', max_length=250, unique=True)
-    cover = models.ImageField('Превью', upload_to='images/')
-    description = models.TextField('Описание')
-    body = models.TextField('Основной текст')
-    created = models.DateTimeField('Дата создания', auto_now_add=True)
-    updated = models.DateTimeField('Дата последнего редактирования', auto_now=True)
-    status = models.CharField('Статус', max_length=15, choices=STATUS_CHOICES, default='draft')
-
-    class Meta:
-        ordering = ('-created',)
-        verbose_name = 'новости'
-        verbose_name_plural = 'Новости'
-
-    def __str__(self):
-        return self.title
-
-
-# ----------------------------------------#
-# 4. Галерея
+# 3. Галерея
 # ----------------------------------------#
 class Gallery(models.Model):
     STATUS_CHOICES = (
@@ -103,6 +78,33 @@ class Gallery(models.Model):
         ordering = ('-created',)
         verbose_name = 'альбом галереи'
         verbose_name_plural = 'Альбомы галереии'
+
+    def __str__(self):
+        return self.title
+
+
+# ----------------------------------------#
+# 4. Новости
+# ----------------------------------------#
+class News(models.Model):
+    STATUS_CHOICES = (
+        ('draft', 'Черновик'),
+        ('published', 'Опубликовано'),
+    )
+    title = models.CharField('Название', max_length=250)
+    slug = models.SlugField('Ссылка', max_length=250, unique=True)
+    cover = models.ImageField('Превью', upload_to='images/')
+    description = models.TextField('Описание')
+    body = models.TextField('Основной текст')
+    album = models.ForeignKey(Gallery, on_delete=models.DO_NOTHING, blank=True, null=True, verbose_name=u"Альбом (не обязательно)")
+    created = models.DateTimeField('Дата создания', auto_now_add=True)
+    updated = models.DateTimeField('Дата последнего редактирования', auto_now=True)
+    status = models.CharField('Статус', max_length=15, choices=STATUS_CHOICES, default='draft')
+
+    class Meta:
+        ordering = ('-created',)
+        verbose_name = 'новости'
+        verbose_name_plural = 'Новости'
 
     def __str__(self):
         return self.title

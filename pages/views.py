@@ -157,11 +157,20 @@ def news(request):
 # 7. Одна новость
 # ----------------------------------------#
 def item_news(request, slug):
-    news_item = News.objects.filter(slug=slug)
+    news_item = News.objects.filter(slug=slug)[0]
+    album = news_item.album
+    photo = None
+    if album:
+        url = album.url
+        photo = get_photo_from_vk(url)[:8]
+
+
     last_articles = Articles.objects.filter(status='published')[:10]
     last_news = News.objects.filter(status='published')[:10]
     data = {
-        'news': news_item[0],
+        'news': news_item,
+        'album': album,
+        'photo': photo,
         'last_posts': last_articles,
         'last_news': last_news
     }
