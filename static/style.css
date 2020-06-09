@@ -103,8 +103,8 @@
   -o-transition: all 0.5s ease 0s;
   transition: all 0.5s ease 0s;
 }
-.single-class:hover .single-img:after,
-.single-class:hover .gallery-icon,
+.single-directions:hover .single-img:after,
+.single-directions:hover .gallery-icon,
 .grid-item:hover .portfolio-img:after,
 .grid-item:hover .gallery-icon,
 .single-blog:hover .gallery-icon {
